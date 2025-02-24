@@ -1,0 +1,240 @@
+class Counter{
+
+    private int counter;
+
+    public void inc(){
+        synchronized (this) {
+            counter++;
+        }
+
+    }
+    public int getCounter(){
+        return this.counter;
+    }
+
+}
+
+class MyThread extends Thread {
+
+    private Counter counter;
+
+    public MyThread(Counter counter){
+        this.counter=counter;
+    }
+
+    @Override
+    public void run() {
+        for (int i=0;i<1000;i++){
+            counter.inc();
+        }
+    }
+}
+
+public class Synchronization {
+
+    public static void main(String[] args) {
+        Counter counter=new Counter();
+        MyThread m1=new MyThread(counter);
+        MyThread m2=new MyThread(counter);
+        m1.start();
+		
+        try{
+            m1.join();
+            m2.join();
+        }
+        catch (Exception e){
+            System.out.println(e);
+        }
+        System.out.println(counter.getCounter());
+    }
+}
+
+
+Thread methods:
+	can give name to thread  by making constructor by passing parameter
+	start() --> To start to run the tread
+	run()   --> It is overriden method of Thread class or Runnable interface which holds the code which should be run
+	sleep() --> To sleep in between code to/ sunsped excution for specific time
+	join()  --> It waits for thread to end and then join next code
+	setPriority()--> To set priority of thread
+	interrupt() --> To stop the thread if it is taking too much time 
+	yeild()    --> To give time to other threads not to take all time for only thread
+	setDeamon() --> To run threads background so JVM doesnt wait for it it do task which is required
+					if main done it JVM doesnt run Deamon as it is just htttt
+	
+	
+
+Synchronized: (intrensic dont no time bound one threade can take until whole works)
+	To make at one time only one thread works inside:
+		1.Method
+		2.Block
+	including sleeps and all nothing make other to enter inside
+
+	in these case we want some time bound time locks so we can do explicit locks
+	-No guarantee of fairness
+	-indefinitly blocking of the thread when one is working
+	- No Interrptibility
+	-No read Write locking
+
+Lock:
+	-fairness can archieve
+	-can give times to threads so everyone can use the source
+	-Interrptibility
+	methods :
+		trylock() --> to aquire lock if available it goes else wait till get available
+		unlock()  --> after work done oe in some time it gets unlock
+		lock() --> same as synchronized
+		tryLock()-> in this lock is doent wait directly return null wont wait no thing happen for that thread
+		tryLock(times,units(mils seconds..))  -> to give time for a lock and if not intrrupted if time ends and it wont get any thing to get in it will return end
+		interrupt()--> It also store the state of thread Thread.currentThread().interrupt()
+		unlock() --> Can do it finally 
+		
+	1.ReentrantLock() : we can give time 
+		-It maintains count how many times lock is aquired
+		-For same thread it can go in all the methods where we locked and count and uncount locks and unlocks
+		
+		
+	2.Interruptinly()--> It helps to archieve interrupt
+	
+	3.ReentrantReadWriteLock():
+		-We can use this to distingush between read and write in the code
+		-We have to create seperate locks for reading and writting
+		-It is ReadWriteLock types lock	
+			Syntaxes:
+				private ReadWriteLock lock=new ReentrantReadWriteLock();
+				private Lock readLock=lock.readLock();
+				private Lock writeLock=lock.writeLock();
+		-It allows read multiple resourses to read as long as nothing writting
+		-If writting it wont
+		
+		readLock.lock();
+		writeLock.lock();
+			
+	
+	
+
+Unfair lock:
+	it doesnt determine order
+	so it is unfair to others
+Fair lock
+	ReentrantLock(fair=true):
+	if any lock aquired it release in order
+	
+
+
+Deadlock:
+	Thread A depends on Thread B and Thread A is depend on Thread B
+	
+	Mutex : only one thread can access only one resourse at a time
+	Hold and Wait: A thread holding at least one resourse which is waitong to acquire resourse held by other thread
+	NoPreemption : cant force to take thread holding them
+	Circular wait: A set of threads waiting each others
+	
+
+Thread communication:
+	Problems:
+		Without proper communication threads need to continously check the the thrads so it wastes the CPU
+		
+	Threads can communicate to each other using methods:
+		
+		wait()  -> Said current thread to release lock and do wait untill other call notify() or notifyAll()
+		notify() -> Wakes up single thread which are waiting
+		notifyAll() -> Wakes up all thread which are waiting
+		
+	
+Thread safety:
+	A object or code is thread safe only when there is not unexpected results as well as race condition when multiple thread are accessing the object or code block
+
+Thread using lambda exression:
+	Runnable runnable=()->{code block}
+	It can be done by functional Interface
+	A function has single abstract method
+	Lambda expression is an anonymous function
+
+Thread Pooling:
+		-Collection of pre-initialize thread to perform a task
+		-Resourse management
+		-Response time increase
+		-Can control thread count
+		
+
+Excutors Framework:
+	-Simplify the concurrent application
+	-Helps in multithreading
+	-Helps to create threads Easily
+	-Helps to do thread pooling
+	-Resourse management
+	-Scalability
+	-Thread Reuse
+	-Error Handling
+	
+	Executor fromawork has three componentes:-
+		1.Executor
+		2.ExecutorService
+		3.ScheduleExecutorService
+		
+		Syntax:
+			-ExecutorService executorService = Executors.newFixedThreadPool(noOfThreadsPool);
+			- It returns Future so we can use internal methods for the same that is it done or not terminated or not
+			
+			
+			executor.submit(() -> {code block});--> To create thread and run it and it returns Result
+			executor.shutdouwn() -> to shutdown / stops working after this statment no task get submmit of that executor and wait all process to complate
+			executor.awaitTermination(time:--,unit)--> untill all task complete of executor dont go next line to work
+			executor.shutdownNow() --> shut down all running and list awaiting processes
+			executor.invokeAll()  --> executes the list of tasks and gets there results as well block the main thread further execution until it is done
+			executorVar.get() --> To get the result
+			for singleThread:->
+				it will end the whenw e call get method for particular variable
+				variable.get():--> to get the value and util it gets finish should not run next part
+			
+			ScheduleExecutorService -- > To done some schedulred task
+				It has methods:
+					1.scheduleAtFixedRate({code},TimeWhenToWork)
+					2.schedule()
+					
+					
+	countDownLatch:
+	
+		Executor framework has to use .get() method to get result and to keep running the things until gets done what if more executors so instead of doing .get we can use countDownLatch
+		countDownLatch latch=new countDownLatch(noOfThreadsPool)
+		we have to use latch.await();
+		we use one or more threads to waint untill finish
+		
+		
+	
+		countDownLatch is not reusable
+	
+	cyclicBarrier : 
+		cyclicBarrier barrier=new cyclicBarrier(noOfThreadsPool)
+		to archieve reusability in the latch we use this
+		
+		It waits all thread to come down at an ending point then all threads get realise
+		
+		barrier can be reset so we can reuse it somultiple class can use this
+	
+	CompletableFuture:
+		-It is for asynchonous programming
+		-Non blocking execution
+		-Deamon Thread by default
+		-Has suppyAsync() to call a callable<>
+		-runAsync(Runnable runnable) :- To perform some site operations like saving data and all..
+		-.get() method to make it wait until it gets completed to get single value throws checked exception
+		-.join()  --> it returns when complete throws unchecked exception
+		-.thenApply() --> to do something with the result
+		-.thenAccept() --> code run inside it only when work done in completable future
+		
+		-CompletableFuture.allOf(t1,t2,t3)  --> to get result of 1 or  more than 1 tasks without blocking excecution it is used to check done all or not
+		-CompletableFuture.whenComplete()  --> To make sure this will do its work after main thread stops working
+		
+		to keep JVM on for completableFuture to run fully after getting main thread comeplted we can use ExecutorFramework so it will keep it running
+Volatile Keyword:
+		-To make variable not to cached in the memory for reasons so it wont cached the things and read directly from main memory
+		
+		-It wont work in the complex things
+		
+		-Just work for state saving
+
+Atomic Keyword:
+		-To make all opearations isolated
+		-Without using locks we can use AtomivInteger 

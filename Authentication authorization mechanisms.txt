@@ -1,0 +1,48 @@
+JWT
+	JSON web token 
+	Use to securly transmit data betwenn two parties
+	It is string consist 3 parts seperated by dots
+	1.Header
+		Consist 2 parts type of algorithm and type of tocken
+	2.Payload
+		It is data which is beign sent
+	3.Signature
+		Ensure that MSG/Data wasn't changed in between
+		To create Signature you should have encoded Header and encoded Payload
+
+
+
+
+OAUTH 2: OPEN AUTHORIZATION
+	To make process Easy
+	Allows 3rd pary to access without username and password
+	Giving rights to do somethings
+	Also helps to create account with other accounts
+	
+	Flow
+	
+		User ---> third party website
+		
+		Auth tool has client ID,redirection URL,Scope (What access should provide),response type,state
+		
+		After granting permissiong it gives code/Token to the third party website
+		
+		That token has Code,Client ID Secrete ,Redirect URL
+		
+		then third part application goes to the OAuth tool with token and  get details and do whatever it was asked
+		
+		If refresh token given then it created access token so no need to login again
+		
+		
+		
+		
+		Third party application ------> OAuth provider
+								<-Code- 
+								
+		Third party application --Code--> getTokenAPi from OAuth provider
+								<-Token-
+								
+		Third party application -Token--> getProfileDetails to provider
+								<-Info--
+								
+		https://www.googleapis.com/auth/userinfo.email
