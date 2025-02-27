@@ -259,9 +259,6 @@ Streams:
 			.distinct()           --> To get all unique element in stream
 			.limit(n)             --> To limit the element in the Stream
 			.skip(n)              --> To skip first n elemnets
-			.flatMap(List::stream)--> To flat if list inside list
-			.groupingBy()         --> to group streams item based on condition
-			.partitioningBy ()    --> Partitian stream based on condition into two groups (predicate)
 			
 			
 		Terminal operation:

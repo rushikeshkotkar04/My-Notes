@@ -746,7 +746,7 @@ Distrubuted tracing:
 	
 	nameOfSpan.end()
 	
-SecurityContextHolder--> helps to store the information about the useds security
+SecurityContextHolder--> helps to store the information about the used security
 My my own knowledge
 
 1.Controller -> Accesing data using entity manager

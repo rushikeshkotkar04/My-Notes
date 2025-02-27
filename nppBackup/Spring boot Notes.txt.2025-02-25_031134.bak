@@ -176,11 +176,6 @@ Spring Boot
 				
 				@JsonIgnore
 					To ignore the field from getting into JSON as a property in spring boot
-					
-				@JsonAnySetter with a Map:
-					in spring boot there are predefined POJO for request body JSON wich convert JSON into java object using jackson
-					but when new feild comes in the JSON and we want to handle we can use this annotation so we directly map it to the MAP so we can use it
-					
 				
 				
 		Maven:
@@ -419,8 +414,6 @@ Logging:
 	we use Logger instance for the same
 	
 	private Logger logger= LoggerFactory.getLogger(StudentManagmentService.class);
-
-At production level we can use ELK stack (Elasticsearch, Logstash, Kibana), for real time tracking
 
 Spring security With JWT:
 	JWT is way to securly transmit information parties as a JSON objcet
