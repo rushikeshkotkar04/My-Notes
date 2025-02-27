@@ -1,0 +1,125 @@
+Kafka :
+	Distrubuted Event-streaming platform/data streaming platform
+	Collects event and stream others
+	consistant and smooth flow of data from source to destination
+	
+
+
+	Cluster:
+		Group of kafka brokers
+	
+	Broker:
+		Server where kafka is running
+		
+		
+	Producer:
+		Produces data into kafak clustor
+	
+	Consumer:
+		Consumes the data from clustor
+		group of kafka server
+	
+	Zookeeper:
+		Keeps track of kafka clustor health
+	
+	Kafka Connect:
+		Get data from external entity like DB /File without writting any code
+		also called declarative integration
+		
+	Kafka stream:
+		Functinalities to transform eg one form to another form
+		
+	
+	Kafka Topic :
+		A table to store the SQL data like student table/Food table
+		When producer produce the data/msg it directly goes into topic
+		
+		
+		Partitions:
+			-Topic has partiton like topic makes part inside it
+			-we have to mention how many partition we need in it
+			
+			-partitions are ordered and immutable
+			
+			-each msg stores in partition with incremental ID known as OffSet
+			maintains order at partition level
+			
+			all transactions store in log file
+			
+			data stores in partition in round robin manner like one by one
+			
+			-To store data in ordered manner we can keep all data in single partition
+			-To storing data in same partition we have to send it with key (as partition name)
+			-Key can be anything it will get its partition by hashing the key to gets its 
+			 related partiton
+			-For using key at producer we have to use key seperator also set parse.key as true
+			 and for consumer print.key=true
+			
+		Consumer groups: 
+			-It helps to track about consumers like partitions pointer/position
+			-There can be more than one consumer
+			-It has consumer offset topic to track each partition in consumer group
+			
+		Consumer group coordinator:
+			-If there more than one consumer we can have coordinator to coordinate it
+			-It assigns consumer to each partition
+			-It uses round robbin fashion to assign partition to each cosumer in the consumer group
+			
+		
+		Consumer Offset and groups:
+			-Position or index of the consumer or we can say which data it it reading now/writting now
+			 also updates the pointer
+			
+			-Consumer offset can be track the position of current index of its consumers 
+	
+	Segments Commit Log and Retention policy:
+		-Each partition appends new message and a perticular set of msg in a partition called segment
+		-In actual the msg in kafka stores in file system in commit logs file
+		tmp/kafka-logs ---> Actual data which is produced by producer
+		
+		Log/data file is always encoded only can read by producer encodes it and consumer decodes it.
+		
+		We can define segment size
+		If file size gets bigger than segment then new file will be created
+		
+
+		Retention policy:
+			-Sized based policy:
+				-Upto how much size data should be saved in log file
+		
+			-Timed based policy:
+				-Upto how much Time/Days data should be saved in log file
+				-After that time the data saved it will be deleted (like ajse 7 din baad deleted if we give 7 days time)
+			
+			-Data gets cleaned or deleted by using log cleaner process
+			-By default retention hours are 168 hrs means 7 days
+		
+	-we can set flag how much data we want whether we want to consume
+	data from begining or not
+	
+	
+	
+	-ISR:
+		In-Sync Replica
+		if we create more than one broker for fault tolerance each broker assign as learder of partition 
+		based on that msg goes in that leader proker partition first and the replicate to other brokers(replicas)
+		
+	
+	
+
+Own knowlwdge:
+
+replication-factor:  copies of a topic
+
+partition
+
+Producer sends data to Topic then it goes in Partition
+
+while sending data we can use key value pair to keep data in single partition
+	although key is optional
+	
+	
+	
+	
+	
+	
