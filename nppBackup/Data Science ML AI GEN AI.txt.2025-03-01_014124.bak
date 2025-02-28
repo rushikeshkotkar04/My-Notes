@@ -1,0 +1,14 @@
+Data analysis with python:
+	
+	1.Numpy:
+		A mathematical lib helps to perform computation also help with matrix and list and other maths operations on data.
+		
+		everything in numpy array(np.array(list of elements)) are element wise
+		
+	
+	2.Pandas:
+		
+		
+		1.df[clname]     --> give clm its dtype is series
+		2.df.loc[index]  --> give rows 
+		3.df.iloc[index] --> give clm 

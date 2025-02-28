@@ -1,0 +1,120 @@
+Mathematics:
+	Statastics and it applications:
+		
+		Types:
+			
+			1.Descriptive:
+				It consists of organizing and summersizing the data
+				
+				Techniques:
+					1.Measure of central tendancy
+						Mean
+						Median
+						Mode
+					
+					2.Measure of dispursion
+						Varianance
+						Standerd daviation
+						
+		
+		
+			2.Inferential/Conclusion:
+				Suppose u collect some data we make some conclusion using some experiments
+				gives us some other data and that data called population data
+				Exprimnets:
+					Z-Test
+					T-Test
+		
+		Population(symbol: N) and sample(symbol :n):
+			
+			consider we have a village of 100 people and i want to know what is the average weight of peoples in the village
+			
+			for
+				-Population : we have to visit all peoples place and take weight of people
+				
+				as it is hard to do so we can give sample like some people and get there and conclude on it
+				
+			
+		Measure of central tendancy
+			1.Mean (symbol:μ)
+				-Average of all elements in data set
+				
+			
+			2.Median:
+				Sort the data and gets middle value if odd numbers of element there else if even no is present
+				then take middle to after sorting and the averatge of those two element will be median
+				
+				-Helps to fight against outliers
+				
+				
+			3.Mode:
+				
+				Most frequent no present
+		
+		
+		
+		Measure of dispursion:
+			dataset={1,1,2,3}
+			Varianance(σ²):
+				-It tells you how far the data points are from the mean, on average, but in a squared sense.
+				
+				Formuulla:
+					σ²=sum(((dataele-mean)^2)/total elements))
+				
+			
+				
+	
+	
+
+Data analysis with python:
+	
+	1.Numpy:
+		A mathematical lib helps to perform computation also help with matrix and list and other maths operations on data.
+		
+		everything in numpy array(np.array(list of elements)) are element wise
+		
+	
+	2.Pandas:
+		
+		
+		1.df[clname]     --> give clm its dtype is series
+		2.df.loc[index]  --> give rows 
+		3.df.iloc[index] --> give clm 
+	
+	
+	Feature engineering:
+		
+		1.Handling missing values:
+			
+			Mechanism why missing values happens:
+			
+				1.Missing completly at random (MCAR):
+					Without reason it happens like might be some error at entry end
+				
+				2.Missing at Random (MAR):
+					Depends on other data why this data is missing
+					Because there no data present for other entity
+					
+					like if you dont have mobile then u wont have mobile number
+				
+				3.Missing data not at random(MNAR):
+					missing is because of some other reason or dependant
+				
+				
+			Techniques:
+				
+				1:Delete the rows where missing values:
+					Disadvantage: We can loose useful data also
+					
+					syntax to do:
+						df.dropna()
+				2:Delete clms has Misisng values:
+					Disadvantage:Can delete useful clm
+						
+						syntax to do:
+							df.dropna(axis=1) 
+								(axix=1 means clm by default its 0 means rows)
+
+					
+					
+					

@@ -1,0 +1,67 @@
+Data science:
+	
+	Mathsematics:
+		Type of data:
+			1.Numerical
+				Numbers like height of people,page load time,stock price etc.
+				
+				Types of Numerical:
+					1.Discrete Data:
+						Integer based : can be counted
+					
+					2.Continuous Data:
+						Infinite type data 
+						
+			2.Categorical:
+				Categories like : Yes/No,Political parties, State
+				
+			3.Ordinal:
+				Mixture of numerical or categorical
+		
+		
+		Mean:
+			Mean: Sum of all numbers/ Total numbers
+		
+		Median:
+			Sort all numbers and find middle if odd no of elements 
+			if even then middle two devided by two
+		
+		Mode:
+			Most frequent number in list of numbers
+			
+			
+		Standard Daviation and Variation:
+			1.Variation = average(squared differences from the mean)
+			example:
+				dataSet=[1,4,5,4,8]
+				
+				mean=sum(dataSet)/len(dataSet)
+				mean=(1+4+5+4+8)/5 = 4.4
+				differences of each number to mean =
+					(1-4.4,4-4.4,5-4.4,4-4.4,8-4.4)=(-3.4,-0.4,0.6,-0.4,3.6)
+				
+				squared diff=(11.56,0,16,0,36,0,16,12,96)
+				
+				avg of squared diff=(11.56,0,16,0,36,0,16,12,96)/5=5.04
+			
+			2.Standard Daviation:
+				Square root of variance
+					sqrt(5.04)=(+/-)2.24
+				
+				use to find out outlier in dataset
+		
+		population vs sample:
+		
+		Probability Density Function:
+			probability of given range of values
+					
+	Matplotlib:
+		
+		we can plot the file
+		we can save the graph
+		we can plot more than on graph on same page/at once
+		can adjust axex values
+	
+	
+	
+	Predictive Models

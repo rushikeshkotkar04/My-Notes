@@ -1,0 +1,29 @@
+Data science:
+	Type of data:
+		1.Numerical
+			Numbers like height of people,page load time,stock price etc.
+			
+			Types of Numerical:
+				1.Discrete Data:
+					Integer based : can be counted
+				
+				2.Continuous Data:
+					Infinite type data 
+					
+		2.Categorical:
+			Categories like : Yes/No,Political parties, State
+			
+		3.Ordinal:
+			Mixture of numerical or categorical
+	
+	
+	Mean:
+		Mean: Sum of all numbers/ Total numbers
+	
+	Median:
+		Sort all numbers and find middle if odd no of elements 
+		if even then middle two devided by two
+	
+	Mode:
+		Most frequent number in list of numbers
+		
