@@ -409,18 +409,7 @@ Natural Language processing:
 				It creates vector using uniqye word as feature/clm
 				and document/corpus/sentence becomes in dataset above mentioned is like
 					
-					Binary bag of words if present 1 else 0
 					    good  boy  girl    o/p
-					
-					1->  1     1    0       1
-					2->  1     0    1       1
-					3->  1     1    1       1
-					4->  1     1    1       1
-					
-					
-					Normal bag of words it has the frq of word present in it
-					
-						good  boy  girl    o/p
 					
 					1->  1     1    0       1
 					2->  1     0    1       1
@@ -430,3 +419,4 @@ Natural Language processing:
 					the count wise store the count if each feaure in word
 					
 			 and after all this this will be trained by ML/DL model
+				

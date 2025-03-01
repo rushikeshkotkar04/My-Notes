@@ -1,0 +1,185 @@
+Mathematics:
+	Statastics and it applications:
+		
+		Types:
+			
+			1.Descriptive:
+				It consists of organizing and summersizing the data
+				
+				Techniques:
+					1.Measure of central tendancy
+						Mean
+						Median
+						Mode
+					
+					2.Measure of dispursion
+						Varianance
+						Standerd daviation
+						
+		
+		
+			2.Inferential/Conclusion:
+				Suppose u collect some data we make some conclusion using some experiments
+				gives us some other data and that data called population data
+				Exprimnets:
+					Z-Test
+					T-Test
+		
+		Population(symbol: N) and sample(symbol :n):
+			
+			consider we have a village of 100 people and i want to know what is the average weight of peoples in the village
+			
+			for
+				-Population : we have to visit all peoples place and take weight of people
+				
+				as it is hard to do so we can give sample like some people and get there and conclude on it
+				
+			
+		Measure of central tendancy
+			1.Mean (symbol:μ)
+				-Average of all elements in data set
+				
+			
+			2.Median:
+				Sort the data and gets middle value if odd numbers of element there else if even no is present
+				then take middle to after sorting and the averatge of those two element will be median
+				
+				-Helps to fight against outliers
+				
+				
+			3.Mode:
+				
+				Most frequent no present
+		
+		
+		
+		Measure of dispursion:
+			dataset={1,1,2,3}
+			Varianance(σ²):
+				-It tells you how far the data points are from the mean, on average, but in a squared sense.
+				
+				Formuulla:
+					σ²=sum(((dataele-mean)^2)/total elements))
+				
+			
+				
+	
+	
+
+Data analysis with python:
+	
+	1.Numpy:
+		A mathematical lib helps to perform computation also help with matrix and list and other maths operations on data.
+		
+		everything in numpy array(np.array(list of elements)) are element wise
+		
+	
+	2.Pandas:
+		
+		
+		1.df[clname]     --> give clm its dtype is series
+		2.df.loc[index]  --> give rows 
+		3.df.iloc[index] --> give clm 
+	
+	
+	Feature engineering:
+		
+		1.Handling missing values:
+			
+			Mechanism why missing values happens:
+			
+				1.Missing completly at random (MCAR):
+					Without reason it happens like might be some error at entry end
+				
+				2.Missing at Random (MAR):
+					Depends on other data why this data is missing
+					Because there no data present for other entity
+					
+					like if you dont have mobile then u wont have mobile number
+				
+				3.Missing data not at random(MNAR):
+					missing is because of some other reason or dependant
+				
+				
+			Techniques:
+				
+				1:Delete the rows where missing values:
+					Disadvantage: We can loose useful data also
+					
+					syntax to do:
+						df.dropna()
+				2:Delete clms has Misisng values:
+					Disadvantage:Can delete useful clm
+						
+						syntax to do:
+							df.dropna(axis=1) 
+								(axix=1 means clm by default its 0 means rows)
+
+				
+				Imputation Techniques to handle missing values
+
+					1-Mean Value imputation
+						-Replace missing values with the mean of clm values
+						-If we have different kind of distrubuted like righr skewed or left skewed it wont work
+
+					2-Median Value imputation
+						-It works also if we have different kind of distrubuted
+						-It also helps to ahndle outliers in dataset
+						
+					3.Mode Imputation techinque
+						-It is used for categrical clm has null values
+					
+					4.Random value :
+						Randmoly picking value and fill but every run it can be changed
+					
+		
+		2.Handling imbalanced Dataset:
+			-In categorical database there might be chance
+			some data is present a lot and some less so it get imbalalnced
+		
+			Techniques:
+				1.Upsampling:
+					Incease the datapoint from minorities
+					
+					cons:
+						varience is not increaing
+				
+				2.DownSampling:
+					Reduce the datapoints from majority
+				
+				3.SMOTE (Synthetic minority oversampling Technique)
+					-Interpolating techinque
+					-Create or join two nearest point and create new datapoint there
+					-So variance can be increased
+		
+		3.Handling outlieres
+			
+			It can be done by box plot
+			-We have to use 
+			5 number summary is imp to get box plot:
+				min val,max val,median,Q1,Q3,IQR
+		
+		4.DATA ENCODING
+			we can use sklearn.preprocessing
+			-As machine only knows the 0/1 language we have to convert categorical data into 0/1 format
+				Types:
+					1.Nominal or ONE HOT ENCODINH
+						-Convert into binary format 1/0
+						-It creates the num of clm as many diffent values present there and assign 1 if that clm value there else 0
+						-Should not use if there are more values present then it will create as many clm there should not use in those cases
+						-Sparse matrix
+					2.Label and ordinal Encoding:
+						-Assigns unique lebel to each categories
+					3.Ordinal encoding:
+						-Use to encode data in way of ranking or order
+						example:
+							Hightschool,College,Graduate,Post-Graduate:
+							It will convert them in form like:
+								
+								Hightschool:1
+								College:2
+								Graduate:3
+								Post-Graduate:4
+								
+					3.Target Guided Ordinal Encoding
+						

@@ -340,7 +340,7 @@ Natural Language processing:
 			WordnetLemmatizer:
 				it uses morphy() function to the wordNet CorpusReader to find lemma
 			
-		in lemmitization we have pos='n' (pos-> Parts of speech)
+		in lemmitization we have pos='n'
 		it means noun
 		for 
 		noun->n
@@ -348,85 +348,5 @@ Natural Language processing:
 		adjective->a
 		adverb->r
 		
-		
 		by default pos tag is n (noun)
 		-It is slower than stemming
-	
-	-Stopwords:
-		The words like The,Have,And,Of,Their,Two,Why.... are stop words
-		wont play imp role in the our logic so these are stop words
-		
-		we can get all stopwords by using nltk
-	
-	
-	-Converting text into vector:
-		
-		Technique:
-			1.ONE HOT ENCODING
-			2.Bag of words (BAG)
-			3.TF-IDF
-			4.Word2vec
-			5.AvgWord2Vec
-		
-		
-		1.ONE HOT ENCODING
-			- It creates a clm for every unique word and create matrix
-			per documnet as per word present as 1 or if not present then 0
-		
-		2.Bag of words:
-		
-			Dataset
-			
-			  Text                  		o/p
-			1.He is a good boy       		  1
-			2.she is a good girl     		  1
-			3.Boy and girl are good  		  1
-			4.Boy is good and girl is good    3
-			
-			
-			Step by Step impl of bag of words:
-				Dataset -> convert all the words to lower case -> 
-				remove stopwords -> calculate uniqe words with there frequency ->
-				keeping words based top most frequence keep in feature ->
-				it gets convert into vector if present then 1 or else 0 
-				
-			step 1: Lower and remove stop words dataset become:
-				
-				1->good boy
-				2->good girl
-				3->boy girl good
-				4->boy good girl good
-			
-			step 2: Calculate uniqe words with there frequency
-				
-				words/vocabulary          frequency
-				good                        5
-				boy                         2
-				girl                        2
-
-			step 3: Apply Bag of Words (keeping words based top most frequence keep in feature)
-			
-				It creates vector using uniqye word as feature/clm
-				and document/corpus/sentence becomes in dataset above mentioned is like
-					
-					Binary bag of words if present 1 else 0
-					    good  boy  girl    o/p
-					
-					1->  1     1    0       1
-					2->  1     0    1       1
-					3->  1     1    1       1
-					4->  1     1    1       1
-					
-					
-					Normal bag of words it has the frq of word present in it
-					
-						good  boy  girl    o/p
-					
-					1->  1     1    0       1
-					2->  1     0    1       1
-					3->  1     1    1       1
-					4->  2     1    1       1
-					
-					the count wise store the count if each feaure in word
-					
-			 and after all this this will be trained by ML/DL model
