@@ -658,16 +658,9 @@ Natural Language processing:
 		-AVgWord2Vec:
 			-It helpful for text data to convert into vector also
 			
-								DATSET
-					
+			
 			    sentance          Text                  O/p
 				    1             The food is good       1
 					2             The food is bad        0
 					3             pizza is amazing       1
 			
-			By usinh google pretrained word2vec model
-			
-			Every word of DATASET gets convrted into 300 diamentional vector 
-			so if we are getting 300 diamension of a single sentence instead every word in the sentence converted into 300 diamension
-			
-			so we take all vectors of words and take avg of that vector and store it in sentance vector and perform same for all 300 vectors for every word line wise			

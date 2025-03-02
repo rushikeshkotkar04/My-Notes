@@ -667,7 +667,7 @@ Natural Language processing:
 			
 			By usinh google pretrained word2vec model
 			
-			Every word of DATASET gets convrted into 300 diamentional vector 
+			Every word of DATASET gets convrted into 300 diamentions 
 			so if we are getting 300 diamension of a single sentence instead every word in the sentence converted into 300 diamension
 			
-			so we take all vectors of words and take avg of that vector and store it in sentance vector and perform same for all 300 vectors for every word line wise			
+			

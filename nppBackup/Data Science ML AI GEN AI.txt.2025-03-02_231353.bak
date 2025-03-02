@@ -567,11 +567,8 @@ Natural Language processing:
 			Advantages of word2 vec:
 				-Instead of sparse matrix we get dense matrix
 				-Symantic information will get captured (simmilar word captured like synonyms or asynonims)
-				-Fixed set of diamensions so we are not dependant on vocabulary size
-				-Out of vocabulary problem also solved as we are capturing all info like symantic information and all
 				
-				
-				
+			
 			
 			Technique for NLP,uses Neural netwok model to learn work associate from large corpus/sentence
 			once trained it can detect synanous word or suggest additional words for partial sentence
@@ -652,22 +649,4 @@ Natural Language processing:
 				how to make it more accurate:
 					Increase the training data
 					Increase the Window size
-		
-		
-		
-		-AVgWord2Vec:
-			-It helpful for text data to convert into vector also
 			
-								DATSET
-					
-			    sentance          Text                  O/p
-				    1             The food is good       1
-					2             The food is bad        0
-					3             pizza is amazing       1
-			
-			By usinh google pretrained word2vec model
-			
-			Every word of DATASET gets convrted into 300 diamentional vector 
-			so if we are getting 300 diamension of a single sentence instead every word in the sentence converted into 300 diamension
-			
-			so we take all vectors of words and take avg of that vector and store it in sentance vector and perform same for all 300 vectors for every word line wise			
