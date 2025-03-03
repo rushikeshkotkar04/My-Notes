@@ -754,7 +754,6 @@ Deep Learning:
 		-We have more than one hidden layer
 		
 		All independant clms have a a input neuron there and go one py one
-		alst layer is OUTPUT layer
 		Example DataSet
 				
 			
@@ -767,173 +766,14 @@ Deep Learning:
 		
 					Neural networks diagram
 					
-					Forword propogartion:
-					
-			--------------------------------------->		
-					
-			Inputs          Hidden Layers(Neurons)
-			layer 			
+			Inputs      Multi Layred NN
+			layer    
 			
-						------    			------   
-						|Bias|				|Bias|
-						|----|				|----|
-							 |                   |
-							 |	                 |
-			      w1          V                   V
 			--->0-----> |---------|   		|---------|
-			      w2    |Neuron cn|   w4	|         |
-			--->0-----> |be more  |-------> | OUTPUT  |
-			      w3    |one neuron|   		|  LAYER  |
+			            |         |   		|         |
+			--->0-----> |         |-------> |         |
+			            |         |   		|         |
 			--->0-----> |---------|   		|---------|
-			              
-						  From this neuron    and From this neuron
-						  suppose we get        suppose we get
-						  output o1               output o2
-		
-				  <----------------------------------------
-								Backword propogation
-		
-		
-		Forword propogartion:
-			-performing some steps:
-			-we assign weights (randomly)
-			-first we calculate z in it by 
-			summation of all wiegths with input feature and bias
-			-and then apply activation function in it
-			and send the ouput to next hidden layer
-		
-		Backword propogation:
-			
-			we go and update weights and send next input to the NN 
-			this happens until the loss / error gets minimized for 
-			each and evry input against its output
-	
-		
-		
-	
-	Activation function:
-		-helps to activating or deactivating neuron
-		1.Sigmoid:
-			-convert z value between 0 to 1
-			
-			formula is:
-				
-				σ(z)=1/(1+e^(-z))
-			
-			terms:
-				-z is the summation of weights and inputs 
-			
-			Disadvantage:
-				In chain rule of deriavtion as sigmoid makes value between 0 to 1
-				the darivation can calculate to 0 to 0.25 with sigmoid
-				-In chain rule of otjer weights it will affect there inputs and can give less accurate results
-				so instead of 0 to 1 we are getting always 0 to 0.25 so can make diffenrce in answer
-				as we are adding condition if value <0.5 then False else True
-				-In short old weight hardly gets updated and scan make performance slow and less accurate also
-				and this is also caled 
-				-Vanishing gradient problem
-				
-				-It is fine for smaller neural networks but we have deeper neural network
-					Then it is bad choice
-
-	Weight updation formula
-		
-		
-		Terms :
-		 L=loss functions
-		 w_i_old=old ith wieght
-		 w_i_new=new ith wieght
-		 α=>learning rate
-		 o1=output1
-		 o2=ouput2
-		 
-		 
-		for last weight
-		
-			w_i_new=w_i_old- α * darivative(L)/darivative(w_i_old)
-		
-		α=>learning rate 
-		terms:
-			(darivative loss fun with darivative of weigh_i_new)-> slop of graph with respect to loss and weight
-			it creates gradient descent
-	Learning rate:
-		If learning rate too hight can affect the weight value and may can o outside of actual graph
-	
-	
-	Terms :
-		 L=loss functions
-		 w_i_old=old ith wieght
-		 w_i_new=new ith wieght
-		 α=>learning rate
-		 o1=output1
-		 o2=ouput2
-	
-	chain rule of derivation for weight updation
-		
-		while backword propogation weight updation happens from right to left
-		
-		for last weight updation formula  is quate simple 
-		w_i_new=w_i_old- α * darivative(L)/darivative(w_i_old)
-		
-		exapnd:
-			
-			w_i_new=w_i_old- α * darivative(L)/darivative(w_i_old)
-			
-			we can write :
-			 darivative(L)/darivative(w_i_old)= (darivative(l)/darivative(o2))*(darivative(o2)/darivative(w_i_old))
-		
-
-		for weight 1st, we can calculate like:
-			
-			w_1_new=w_1_old- α *(darivative(L)/darivative(w_1_old))
-			
-			
-			(darivative(L)/darivative(w_1_old))= (darivative(L)/darivative(o2)) * (darivative(o2)/darivative(o1)) * (darivative(o1)/darivative(w_1_old))
-
-		but for others we have to expand the darivative for other
-		
-		darivative
-		
-		
-	Loss Function:
-		
-		it calculate how away predicted output and actual output
-		loss function= (y- ŷ)^2
-		
-		in short it calculate error and out Deep learning model try to reduce the error
-		
-		and our deep learning model try to minimize it
-		
-		-we use optimizer to reduce loss 
-		
-
-	OPTIMIZER:
-		Optimizers help to reduce loss value
-		
-	
-	
-	
-	Vanishing gradient problem and activation function:
-	
-		In chain rule of deriavtion as sigmoid makes value between 0 to 1
-		the darivation can calculate to 0 to 0.25 with sigmoid
-		-In chain rule of otjer weights it will affect there inputs and can give less accurate results
-		so instead of 0 to 1 we are getting always 0 to 0.25 so can make diffenrce in answer
-		as we are adding condition if value <0.5 then False else True
-		-In short old weight hardly gets updated and scan make performance slow and less accurate also
-		and this is also caled 
-		-Vanishing gradient problem and activation function:
-	
-	
-	What is diffenernce between loss function and cost function
-	
-	-In loss function we calulate (y- ŷ)^2 for every 
-	-In Cost function we calculate summation of  (y- ŷ)^2 for every output
-	
-			
-			
-	
-	
 			
 Important Terms:
 	Weights in Neural networks

@@ -832,9 +832,6 @@ Deep Learning:
 				-In short old weight hardly gets updated and scan make performance slow and less accurate also
 				and this is also caled 
 				-Vanishing gradient problem
-				
-				-It is fine for smaller neural networks but we have deeper neural network
-					Then it is bad choice
 
 	Weight updation formula
 		

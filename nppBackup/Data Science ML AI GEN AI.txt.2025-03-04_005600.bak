@@ -818,24 +818,9 @@ Deep Learning:
 			
 			formula is:
 				
-				σ(z)=1/(1+e^(-z))
-			
-			terms:
-				-z is the summation of weights and inputs 
-			
-			Disadvantage:
-				In chain rule of deriavtion as sigmoid makes value between 0 to 1
-				the darivation can calculate to 0 to 0.25 with sigmoid
-				-In chain rule of otjer weights it will affect there inputs and can give less accurate results
-				so instead of 0 to 1 we are getting always 0 to 0.25 so can make diffenrce in answer
-				as we are adding condition if value <0.5 then False else True
-				-In short old weight hardly gets updated and scan make performance slow and less accurate also
-				and this is also caled 
-				-Vanishing gradient problem
-				
-				-It is fine for smaller neural networks but we have deeper neural network
-					Then it is bad choice
-
+				1/(1+e^(-z))
+	
+	
 	Weight updation formula
 		
 		
@@ -888,7 +873,7 @@ Deep Learning:
 			w_1_new=w_1_old- α *(darivative(L)/darivative(w_1_old))
 			
 			
-			(darivative(L)/darivative(w_1_old))= (darivative(L)/darivative(o2)) * (darivative(o2)/darivative(o1)) * (darivative(o1)/darivative(w_1_old))
+			(darivative(L)/darivative(w_1_old))=darivative(L)/darivative(o2) * darivative(o2)/darivative(o1) * darivative(o1)/darivative(w_1_old) 
 
 		but for others we have to expand the darivative for other
 		
@@ -912,19 +897,6 @@ Deep Learning:
 		
 	
 	
-	
-	Vanishing gradient problem and activation function:
-	
-		In chain rule of deriavtion as sigmoid makes value between 0 to 1
-		the darivation can calculate to 0 to 0.25 with sigmoid
-		-In chain rule of otjer weights it will affect there inputs and can give less accurate results
-		so instead of 0 to 1 we are getting always 0 to 0.25 so can make diffenrce in answer
-		as we are adding condition if value <0.5 then False else True
-		-In short old weight hardly gets updated and scan make performance slow and less accurate also
-		and this is also caled 
-		-Vanishing gradient problem and activation function:
-	
-	
 	What is diffenernce between loss function and cost function
 	
 	-In loss function we calulate (y- ŷ)^2 for every 
@@ -932,8 +904,7 @@ Deep Learning:
 	
 			
 			
-	
-	
+			
 			
 Important Terms:
 	Weights in Neural networks
