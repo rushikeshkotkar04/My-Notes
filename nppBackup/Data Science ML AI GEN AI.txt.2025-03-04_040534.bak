@@ -922,29 +922,18 @@ Deep Learning:
 
 			
 		
-		5.ELU(Exponential Linear Unit):
+		ELU(Exponential Linear Unit):
 		
 			Formulla:
 				f(x)=z if z>0 else α*((e^z)-1)
 			in backward propogation:
 				as darivative of this activation function in backward propogation either 1 if positive or less than 0 
 			
-			-It is used to solve RELU problems
-			
-			
 			Advantage:
 				-Solving dead neuron proble as we wont get darivative of this activation function value as 0
 				-0 centric
 			
-			Disadvantage:
-				
-				as maths formula is exponential so it is slower as computationaly slow
-		
-		6.Softmax activation function:
-		
-		
 			
-		
 	Weight updation formula
 		
 		

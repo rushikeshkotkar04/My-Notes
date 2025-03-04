@@ -870,7 +870,7 @@ Deep Learning:
 			
 		
 		
-		3.Relu (Rectified Linear Unit) Activation function:
+		3.Relu Activation function:
 			
 			
 			Formula:
@@ -895,56 +895,28 @@ Deep Learning:
 					as it is getting zero then it new weights getting same as old then
 					further process wont happens everytime it gets same as old so neuron will be
 					dead/neuron with same functions or no functionality
-				-Relu functions output is either 0,z so it is not zero centric at all either we get zero or positive number
+				-Relu functions output is either 0,z so it is nit zero centric at all either we get zero or positive number
 		
 		4.Leaky relu or parametric Relu:
 			
 			-as in mormal Relu we get either 0 or z/max value so to solve this
 				we use leaky Relu or parametric Relu
 			
-			we multiply z with small constant 0.01 to z and keep it as instead 0 in formula
-			if α is 0.01 then it is leanky relu if other than 0.01 it is parametric Relu
+			we multi py z with small constant 0.01 to z and keep it as instead 0 in formula
+			
 			formulla:
 			
 				f(x)=max(α*z,z)
 				
-				we have to find out α value herecan be find out hyperparametric tuning
+				we have to find out α value herecan be find out hyperparametric relu
 				terms:
 					α => hyperparameter
 					
 			
 			Advantages:
-				-We will never get zero in back propogation as activation functio of z ansewer so it solve deead neuron problem
-				- And in has all other advantages of Relu
-			
-			Disadvantage:
-				-Leaky Relu /parametric Relu functions output is either 0,z so it is nit zero centric at all either we get zero or positive number
-
-			
-		
-		5.ELU(Exponential Linear Unit):
-		
-			Formulla:
-				f(x)=z if z>0 else α*((e^z)-1)
-			in backward propogation:
-				as darivative of this activation function in backward propogation either 1 if positive or less than 0 
-			
-			-It is used to solve RELU problems
-			
-			
-			Advantage:
-				-Solving dead neuron proble as we wont get darivative of this activation function value as 0
-				-0 centric
-			
-			Disadvantage:
-				
-				as maths formula is exponential so it is slower as computationaly slow
-		
-		6.Softmax activation function:
-		
-		
-			
-		
+				It solved 
+					
+					
 	Weight updation formula
 		
 		
