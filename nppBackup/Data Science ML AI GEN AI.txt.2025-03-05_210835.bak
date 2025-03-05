@@ -1283,30 +1283,9 @@ Deep Learning:
 						wt initialize in normal daviation ranginge from 0 to σ 
 							where σ=root(2/(input+output))
 					
-					2.Xavier uniform initialization:
+					2.Xavier uniform initialization::
 						wt initialize in uniform distrubution
 						ranges between (-root(6))/root(input+output)  to (root(6))/root(input+output)
-						
-					
-			3.Kaiming He initialization:
-				
-				Types:
-					1.He normal
-					wt initialize in normal daviation ranginge from 0 to σ 
-							where σ=root(2/(input))
-					
-					
-					2.He uniform:
-						
-						wt initialize in uniform distrubution
-							ranges between (-root(6))/root(input)  to (root(6))/root(input)
-							
-		
-	
-	
-		Drop Out layer:
-			
-	
 Important Terms:
 	Weights in Neural networks
 		Importance of weight is that helps to pass signal to neuron

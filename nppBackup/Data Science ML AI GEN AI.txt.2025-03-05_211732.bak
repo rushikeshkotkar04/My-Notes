@@ -1301,12 +1301,7 @@ Deep Learning:
 						wt initialize in uniform distrubution
 							ranges between (-root(6))/root(input)  to (root(6))/root(input)
 							
-		
-	
-	
-		Drop Out layer:
-			
-	
+						
 Important Terms:
 	Weights in Neural networks
 		Importance of weight is that helps to pass signal to neuron
