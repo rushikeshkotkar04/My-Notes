@@ -1311,7 +1311,7 @@ Deep Learning:
 			-To make sure data wont overfit the model
 			-done with using p-value 
 			-While during tetsing all neuron gets connected mean no drouput layer
-			while in tetsing all wts gets multply with respected p-value
+	
 Important Terms:
 	Weights in Neural networks
 		Importance of weight is that helps to pass signal to neuron
