@@ -1369,7 +1369,7 @@ Deep Learning:
 
 		
 		Max Pooling:
-			-It is imp to location invarient(location of focus in short term)
+			-It is imp to location invarient
 			-We apply max pooling on output of image 
 			-Helps to get more info from image even after filer
 
@@ -1379,22 +1379,11 @@ Deep Learning:
 				3.if there multiple car wheels in an image so max pooling helps to give it perfectly that they are cat images so max pooling focus on only car wheels
 		
 		Min Pooling:
-			 we take  min value of pixcel instead of taking max value
 		
 		Average Pooling:
-			we take  avg value of all pixcel instead of taking min or maxax value
-	
-	
-	Flattening and Fully connected layer:
-		Flattern  : convert image materix into straight order
-					and image has more than one one layer so it gets attached 
-					same valled as fully connected layer
-					all layers each element values gets connected to neurons as input to learn
-
-
-	
-	CNN with RGB:
 		
+
+	
 
 Important Terms:
 	Weights in Neural networks

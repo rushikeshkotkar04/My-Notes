@@ -1318,7 +1318,7 @@ Deep Learning:
 
 	
 	
-	Convolution Neural network(CNN) :
+	CNN :
 		-Work as human brain works after seeing images
 		-INPUT HERE IS IMAGES
 		
@@ -1327,74 +1327,14 @@ Deep Learning:
 			-There are a lot of pixcels
 			-each pixcels range between 0-255 and for any clour range is same
 
-	
-		Convolution operations:
-			It find out some info from image
-			
-			step1:
-				Normalize the Image means convert each pixcel into 0 to 1
-				To do normlization we devide all pixcel by 255
-			
-			then we add filter of any size like 3*3 
-			use of filter to pick out info from pics
-			after applying filer we get one image
-			and these filer use for vertical edge figding
-			
-			same for horizontal we have a filter to find horizontal edges
-			-we can loose info as per filter might be small
-			
-			this entier called convolution layer
-			we can add any no of convolution later
-			
-			
-			
-		Padding:
-			
-			we add one more layer on real image aand we apply filter the image get bigger than original
-			and after applying filter we wont loose the data
-			
-			either use 0 padding means add 0 in padded filter 
-			or neighbour padding means use neighbour pixcel values
-			
-			
-			help to not loose the info from image after applying filter
-			
 
 
-	Operation of CNN vs ANN:
-		we apply relu to tranfer pixcel value in CNN
-	
-	
-	Max,Min,Average pooling:
-
-		
-		Max Pooling:
-			-It is imp to location invarient(location of focus in short term)
-			-We apply max pooling on output of image 
-			-Helps to get more info from image even after filer
-
-			eg:
-				1.if there multiple cat faces in an image so max pooling helps to give it perfectly that they are cat images so max pooling focus on only cat faces
-				2.if there multiple cars in an image so max pooling helps to give it perfectly that they are cat images so max pooling focus on only cars
-				3.if there multiple car wheels in an image so max pooling helps to give it perfectly that they are cat images so max pooling focus on only car wheels
-		
-		Min Pooling:
-			 we take  min value of pixcel instead of taking max value
-		
-		Average Pooling:
-			we take  avg value of all pixcel instead of taking min or maxax value
-	
-	
-	Flattening and Fully connected layer:
-		Flattern  : convert image materix into straight order
-					and image has more than one one layer so it gets attached 
-					same valled as fully connected layer
-					all layers each element values gets connected to neurons as input to learn
 
 
-	
-	CNN with RGB:
-		
+
+
+
+
 
 Important Terms:
 	Weights in Neural networks

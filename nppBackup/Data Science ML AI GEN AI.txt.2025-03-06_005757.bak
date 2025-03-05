@@ -1382,19 +1382,9 @@ Deep Learning:
 			 we take  min value of pixcel instead of taking max value
 		
 		Average Pooling:
-			we take  avg value of all pixcel instead of taking min or maxax value
-	
-	
-	Flattening and Fully connected layer:
-		Flattern  : convert image materix into straight order
-					and image has more than one one layer so it gets attached 
-					same valled as fully connected layer
-					all layers each element values gets connected to neurons as input to learn
-
-
-	
-	CNN with RGB:
 		
+
+	
 
 Important Terms:
 	Weights in Neural networks

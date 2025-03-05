@@ -1391,11 +1391,6 @@ Deep Learning:
 					same valled as fully connected layer
 					all layers each element values gets connected to neurons as input to learn
 
-
-	
-	CNN with RGB:
-		
-
 Important Terms:
 	Weights in Neural networks
 		Importance of weight is that helps to pass signal to neuron
