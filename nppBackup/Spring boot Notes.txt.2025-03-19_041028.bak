@@ -138,22 +138,6 @@ Spring Boot
 							noRollbackFor:vice versa of rollbackOn
 							timeout:
 							readOnly:
-							
-							Easy Cheat Sheet
-								Isolation: Pick Based on Safety vs. Speed
-								Super Safe: SERIALIZABLE (banks, critical systems).
-								Pretty Safe: REPEATABLE_READ (reports, calculations).
-								Good Enough: READ_COMMITTED (most apps, e-commerce).
-								Fast but Risky: READ_UNCOMMITTED (stats, non-critical).
-								Lazy Choice: DEFAULT (start here, tweak later).
-								Propagation: Pick Based on Teamwork
-								Team Player: REQUIRED (default, most cases).
-								Lone Wolf: REQUIRES_NEW (independent steps).
-								Flexible: SUPPORTS (read-only stuff).
-								Outsider: NOT_SUPPORTED (non-database work).
-								Strict Team: MANDATORY (needs a transaction).
-								No Team: NEVER (no transactions allowed).
-								Mini Team: NESTED (save points, advanced).
 								
 				
 				@Repository

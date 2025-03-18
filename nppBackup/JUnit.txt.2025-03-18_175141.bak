@@ -1,0 +1,6 @@
+
+
+@Test
+	Which ever method we want to run as Test we have to annote it as @Test
+	
+	

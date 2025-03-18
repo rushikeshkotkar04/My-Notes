@@ -134,73 +134,6 @@ HashTable:
 -----------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------
 
-
-Memory managemnet:
-	There are two types of memory
-		1.Stack
-		2.Heap
-	
-	-JVM responsible to manage memory in java
-	
-	Stack:->
-		-Stack stores temporory variables and seperate memory block for methods
-		-Stores primitive data types
-		-Stores reference of Heap object
-			Strong reference
-			Weak reference
-				Soft reference
-		-Follows LIFO order
-		-If stack memory goes full it gives stack overflow error
-		-Each thread has its own stack memory but all thread stores in common heap memory
-	
-	Heap:
-		-There no order in heap for created memory 
-		-Garbage collector responsible to clear objects which are not referred
-		-GC runs periodically and JVM is responsible for that
-		-Heap Momory:
-			Devided into two parts:
-				1.Young generation:
-					Types:
-						-Eden: When we create new object of a class it goes in Eden
-						-S0- Servivor space:After GC run all object which has refference will sweep from Eden to s0 and there ages increase by 1
-						-S1- Servivor space:After GC run all object which has refference will sweep from Eden to s1 and there ages increase by 1
-					In young generation major GC work
-				2.Old Generation/Tenuer:
-					-After the GC runs any object in S1 and has referrence then it will be moved from s1 to Old Generation
-					-In Old generation Minor GC work
-					-Object move to Old generation when its age reach to threashhold
-				
-	-Meta Space:
-		It stores the class variables (static variables),Class meta data ,It stores Constants
-	
-	
-	Garbage Collector algorithms:
-		1.Mark and sweep algo: Mark the obj which are non referrence and sweep objects to next level
-		2.Mark and sweep with compact space: Make objects space seuuential so we can use most of it
-	
-		Version of GC:
-			-Serial : only 1 thread is used to freedup the space in each generations (slow,VV expensive) ,Here GC threads stops when application thread works
-			-Parallel :(Default Version in java 8): Depending on core that many threads of GC works at a time so it is faster Here GC threads stops when application thread works
-			-Concurrent mark and sweep: While applicationn threads working concurrently GC threads also working no one stop Here GC threads stops when application thread works(Not 100% Guaranteed) compaction can not happen
-			-G1 GC: Bettern version Concurrent mark and sweep (Try to give 100%),And compaction happen
-	
-	Type Referrences:
-		Strong referrence: Same as we use 
-		Weak referrence: Same as we use using WeakReferrence<T> var=new WeakReferrence<T> (new T())
-						-As soon as GC runs it free the object like delete the Obj memory
-						-you can use it until garbage collector runs
-		Soft referrance: Type of weak 
-							It can be deleted by the GC as soon as it run but only if it urgent or required
-							
-	
-
-	
-	
-
-
-		
-			
-							
 Iterable : Interface
 			Has Functionality of forEach loop
 			it has methods
@@ -222,7 +155,7 @@ ListIterator:
 	
 Functional interface:
 		A interface where only one abstract method present
-		Lambda experssion is one of them
+		Lambda experssion is on eof them
 		
 		interface MathOpeartions {
 			int operation(int a, int b);
@@ -362,7 +295,8 @@ MultiThreading:
 		multiple process can run at a time
 		import java.lang.*;
 		you can extend thread class or else extend runnable interface or callable interface
-	
+		
+		
 		start(),join(),setPriority(),setDeman(),sleep(),
 		Runnable,Terminated,Sleeping,blocked....
 		
@@ -440,22 +374,8 @@ Atomic Keyword:
 
 
 JDK,JRE,JVM JIT:
-	.JAVA -> compiler -> BYTECODE (platformInDependant)-> interpretation-> Machine Level Code (platformDependant)
+	.JAVA -compile-> BYTECODE (platformInDependant)-interpretation-> Machine Level Code (platformDependant)
 	        javac                 JVM
-	
-	Java Code-> Compiler (ByteCode) -> JVM (Machine Code)->CPU -> Output
-	
-	JVM(Java Virtual machine):
-		-It is an abstract machine(Doesnt exit physically or we can say it is just software)
-		-It Has JIT (JUST IN TIME) Compiler which helps to conver Bytecode to Machine code
-		JRE (Java RunTime Environment):
-			-It has JVM and in built useful library like Mths,Collection framework
-			-If you jave JRE u can run any Java byteCode/Compiled code on System but cant write java program
-			JDK:
-				-We get a programming language java
-				-Compiler
-				-Debugger
-				
 	
 RuntimeException : It is for unchecked exception
 

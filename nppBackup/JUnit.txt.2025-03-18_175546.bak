@@ -1,0 +1,25 @@
+
+	
+we have assertEquals(),assertNotNull()....
+
+
+@Test
+	-Which ever method we want to run as Test we have to annote it as @Test
+	
+
+
+@ParameterizedTest:to give parameters to functions
+@Csvourses({
+	csv inputs
+})
+@CsvSourses(DataType={
+	inputs
+})
+@CsvFileSourses(Path of csv file)
+ ArgumentSource
+	
+@BeforeEach: To initalize before running each test
+@BeforeAll(): TO run once before all test cases run
+@AfterEach: To initalize After running each test
+@AfterAll(): TO run once After all test cases run
+

@@ -1,0 +1,29 @@
+
+	
+we have assertEquals(),assertNotNull() alot didnt mention
+
+
+@Test
+	-Which ever method we want to run as Test we have to annote it as @Test
+	
+
+@Disabled: To skip the test case
+@RepeatedTest: To reapet the test case
+@ParameterizedTest:to give parameters to functions
+@Csvourses({
+	csv inputs
+})
+@CsvSourses(DataType={
+	inputs
+})
+@CsvFileSourses(Path of csv file)
+ ArgumentSource
+	@ValueSource: Supply ay inputs of any datatype
+	@MethodSource(methodName): For method passing parameter
+	@NEsted : To give nested test
+	@DisplayName("Custom Test Name"): Gives tests human-readable names in reports.
+@BeforeEach: To initalize before running each test
+@BeforeAll(): TO run once before all test cases run
+@AfterEach: To initalize After running each test
+@AfterAll(): TO run once After all test cases run
+

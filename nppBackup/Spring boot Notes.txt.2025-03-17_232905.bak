@@ -84,14 +84,14 @@ Spring Boot
 				@Entity
 						--> To make class map to database table
 						
-				@Table(name=name,UniqueConstraint={"clm1","clm2"}) {optional}
+				@Table(name=name) {optional}
 						--> To give name to the table in database
 						
 				
 				@Id
 						--> To make field/column as a primary key
 				
-				@Column(name=name,unique=true) {optional}
+				@Coulumn(name=name) {optional}
 						--> To name coloumn as we wantend
 						
 				@Profile("environmentName"):
@@ -132,28 +132,6 @@ Spring Boot
 								7.NESTED: If a transaction exists, it will create a nested transaction.
 							
 							Isolation Levels:
-					
-							
-							rollbackOn: Based on exception throw
-							noRollbackFor:vice versa of rollbackOn
-							timeout:
-							readOnly:
-							
-							Easy Cheat Sheet
-								Isolation: Pick Based on Safety vs. Speed
-								Super Safe: SERIALIZABLE (banks, critical systems).
-								Pretty Safe: REPEATABLE_READ (reports, calculations).
-								Good Enough: READ_COMMITTED (most apps, e-commerce).
-								Fast but Risky: READ_UNCOMMITTED (stats, non-critical).
-								Lazy Choice: DEFAULT (start here, tweak later).
-								Propagation: Pick Based on Teamwork
-								Team Player: REQUIRED (default, most cases).
-								Lone Wolf: REQUIRES_NEW (independent steps).
-								Flexible: SUPPORTS (read-only stuff).
-								Outsider: NOT_SUPPORTED (non-database work).
-								Strict Team: MANDATORY (needs a transaction).
-								No Team: NEVER (no transactions allowed).
-								Mini Team: NESTED (save points, advanced).
 								
 				
 				@Repository
@@ -225,10 +203,6 @@ Spring Boot
 				@ConditionalOnProperty:
 					Allow bean should enable or desable or create or not is  not present
 				
-				
-				@Valid:
-					Checks validation of entity fields like @NotNull,@Size,... there given before @RequestBody we use to apply on that input
-					
 		Maven:
 			
 			-Maven is project management tool
@@ -236,23 +210,8 @@ Spring Boot
 			
 				1.devtools ---> auto rerun project  (for this set up in preferances and advance settings of the intelij too)
 				
-			-We add dependancy
-			-Download JAR files which are required
 			
-			POM->Project order model .xml file
-			
-				Structure :
-					-Project metadate : Name of project,version,and output file type like JAR WAR
-				
-				Dependancies:
-					-Required things/Modules/Frameworks for proejcts
-				
-				Plug ins:
-					Additional Custom task to run like generate JUNIT testa and report
-				
-				
-				
-					
+		
 		Actuator:
 			-To monitor and manage the application
 			-To check application health
@@ -260,8 +219,6 @@ Spring Boot
 			-To access aplication tcpDumps
 			-Adding dependancy automatically itegrate  it by using /actuator
 				for this we have to integrate by going into application.properties
-		
-		
 		
 		Security:
 			-It secures all Rest API endpoints automatically by using username and password
@@ -641,7 +598,7 @@ Spring Security:
 		
 		for Inmemory we can use InmemoryUserDeatils class
 		
-		for restriction access we can use requestMatcher:
+		for restriction access we can use requesrMatcher:
 		
 			HttpSecurity http
 			
@@ -735,109 +692,15 @@ REST TEMPLATE:
 
 AOP : Aspect of programming
 	
-	-Code reuse and Easy to change
-	-Reduce complexity
-	
-	Usecases:
-		Logging,security transactions
-		Audit logging
-		Exception Handling
-		API management 
-		analytics also
-	
-	Teminology
-	
-		Aspect: module of code for a cross Cutting concerns (logging,Security..)
-		
-		Advice: What action is taken and when it should be applied
-
-		Join Points: When to apply code during program execution
-		
-		Pointcut:A predicate expression for where advice should be applied
-		
 	@Aspect : to get the AOP things are beign used
 	
+	@BeforeAdvice:
+		before request hitting target object we have the custom code run before target runs
+		Use cases:
+			-logging ,security or transactions.
+			-Audit logging
+			-API manager
 	
-	Advice Types:
-		@BeforeAdvice:
-			before request hitting target object we have the custom code run before target runs
-			Use cases:
-				-logging ,security or transactions.
-				-Audit logging
-				-API manager
-	
-	
-	
-	-In short we have to write a method and with @Before we have to tell before that advice run following method
-	
-		
-		@AfterAdvice:Run the code after method finishes same like finally in try catch block
-		
-		@AfterReturning:Run the code after the method successful(success execution)
-		
-		@AfterThrowing: run after method if exception thrown
-		
-		@Around:Run code before and after the method
-	
-	Weaving:
-		-Connecting aspect to target object to create advice object
-		-Run Time weaving is slowest
-		
-	
-	Spring AOP:
-		-Only supports Method level join points
-		-Run-time code weaving is slower than AspectJ
-		
-		
-	AspectJ:
-		all type join points:Method level,Constructor,Field level
-		weaving:compile time,post compile time and load time
-		
-		Types:
-			Compile time
-			load timr or run time
-			
-	
-	Pointcut:
-		
-		Pointcut expression Language:
-			execution(modifier-pattern? return-type-pattern declaring-type-pattern?
-					  method-name-patten(parameter-pattern) throw-pattern?)
-		
-			? -> Means optional
-		
-		example:
-			    For specif path wise:
-				
-					@Before("execution(public String com.prac.prac.controller.StudentController.getname())")
-				As we didnt metion path it will rin for any with same things
-					@Before("execution(public String getname())")
-		Matching on method name:
-	
-	Pointcut declaration:
-		Resuse the pointcut expression
-		If we want to apple to multiple advices
-		
-		declare point cut and use it
-		@Pointcut("execute(experession)")
-		privare void methodName(){}
-		
-		for advice use the method name there like
-		@Befre("methodName()")
-		
-	
-	Combine the pointcuts:
-		Apply same advice for multiple locations
-			we can use And (&&) Or (||) Not(!)
-	
-	Order of the advices:
-		we can use @Order(num) annotation
-		We have to convert aspects in differnt modules/classes and give @Order(num)on it
-	
-	
-	Reading the arguments
-		We use JoinPoints: it gives info about method that is executing
-		has get signature method helps us to give method signature
 
 NOTES : Can use "*" to expose all endpoints
 		Can use "," to expose one by one endpoints with endpoint name

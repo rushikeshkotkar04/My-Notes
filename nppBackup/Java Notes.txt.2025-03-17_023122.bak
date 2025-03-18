@@ -363,6 +363,7 @@ MultiThreading:
 		import java.lang.*;
 		you can extend thread class or else extend runnable interface or callable interface
 	
+	
 		start(),join(),setPriority(),setDeman(),sleep(),
 		Runnable,Terminated,Sleeping,blocked....
 		

@@ -222,7 +222,7 @@ ListIterator:
 	
 Functional interface:
 		A interface where only one abstract method present
-		Lambda experssion is one of them
+		Lambda experssion is on eof them
 		
 		interface MathOpeartions {
 			int operation(int a, int b);
@@ -362,7 +362,8 @@ MultiThreading:
 		multiple process can run at a time
 		import java.lang.*;
 		you can extend thread class or else extend runnable interface or callable interface
-	
+		
+		
 		start(),join(),setPriority(),setDeman(),sleep(),
 		Runnable,Terminated,Sleeping,blocked....
 		
@@ -447,15 +448,10 @@ JDK,JRE,JVM JIT:
 	
 	JVM(Java Virtual machine):
 		-It is an abstract machine(Doesnt exit physically or we can say it is just software)
-		-It Has JIT (JUST IN TIME) Compiler which helps to conver Bytecode to Machine code
-		JRE (Java RunTime Environment):
-			-It has JVM and in built useful library like Mths,Collection framework
-			-If you jave JRE u can run any Java byteCode/Compiled code on System but cant write java program
-			JDK:
-				-We get a programming language java
-				-Compiler
-				-Debugger
-				
+		-
+		JRE:
+			JDK
+			
 	
 RuntimeException : It is for unchecked exception
 

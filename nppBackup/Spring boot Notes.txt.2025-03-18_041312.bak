@@ -84,14 +84,14 @@ Spring Boot
 				@Entity
 						--> To make class map to database table
 						
-				@Table(name=name,UniqueConstraint={"clm1","clm2"}) {optional}
+				@Table(name=name) {optional}
 						--> To give name to the table in database
 						
 				
 				@Id
 						--> To make field/column as a primary key
 				
-				@Column(name=name,unique=true) {optional}
+				@Coulumn(name=name) {optional}
 						--> To name coloumn as we wantend
 						
 				@Profile("environmentName"):
@@ -132,28 +132,6 @@ Spring Boot
 								7.NESTED: If a transaction exists, it will create a nested transaction.
 							
 							Isolation Levels:
-					
-							
-							rollbackOn: Based on exception throw
-							noRollbackFor:vice versa of rollbackOn
-							timeout:
-							readOnly:
-							
-							Easy Cheat Sheet
-								Isolation: Pick Based on Safety vs. Speed
-								Super Safe: SERIALIZABLE (banks, critical systems).
-								Pretty Safe: REPEATABLE_READ (reports, calculations).
-								Good Enough: READ_COMMITTED (most apps, e-commerce).
-								Fast but Risky: READ_UNCOMMITTED (stats, non-critical).
-								Lazy Choice: DEFAULT (start here, tweak later).
-								Propagation: Pick Based on Teamwork
-								Team Player: REQUIRED (default, most cases).
-								Lone Wolf: REQUIRES_NEW (independent steps).
-								Flexible: SUPPORTS (read-only stuff).
-								Outsider: NOT_SUPPORTED (non-database work).
-								Strict Team: MANDATORY (needs a transaction).
-								No Team: NEVER (no transactions allowed).
-								Mini Team: NESTED (save points, advanced).
 								
 				
 				@Repository
@@ -641,7 +619,7 @@ Spring Security:
 		
 		for Inmemory we can use InmemoryUserDeatils class
 		
-		for restriction access we can use requestMatcher:
+		for restriction access we can use requesrMatcher:
 		
 			HttpSecurity http
 			

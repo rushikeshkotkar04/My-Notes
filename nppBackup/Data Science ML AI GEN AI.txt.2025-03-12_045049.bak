@@ -1394,23 +1394,7 @@ Deep Learning:
 
 	
 	CNN with RGB:
-
-TensorFlow:
-	We call ANN as Sequential model in tensorflow
-	
-	for using tensorflow
 		
-		-we have to create object for Sequential model/network
-		-For hidden neuron  we have to use Dense we can get number how much hideen neurons we need  in hideen layer
-		-we use activation functions : sigmoid,relu,leaky relu...
-		-optimizer: useful in backpropogation,as it is responsible for updating the weights
-		-Loss function: try to reduce loss based on it gradient descent
-		-matric: for accuracy
-		-Training info logs in a folder using tensorborad  library helps to store and desplay the logs in visuallization
-	
-End-To-End Projects:
-	1.Churn Modeling
-	
 
 Important Terms:
 	Weights in Neural networks
