@@ -1,0 +1,20 @@
+LLD Systems design
+
+
+SOLID
+
+S->Single Responsibility Principle
+O->Open/Closed Principle
+L->Liskov Substitution Principle
+I->Inteface Segment Principle
+D->Dependancy Inversion Principle
+
+
+Single Responsibility Principle
+	-Class should have only one reason to change
+	>For solving the problem ->
+		-For this u can make a classes having single function so they will treat as a Single Responsibility 		 Principle
+Open/Closed Principle
+	-Class is open for extension (can be inherit) but closed for modification (cant be modified).
+	>For solving the problem ->
+		-Make a interface to do something and extends that interface for different classes.

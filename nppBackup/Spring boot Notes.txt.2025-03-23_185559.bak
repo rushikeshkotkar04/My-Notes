@@ -585,6 +585,8 @@ JPQL:
 		
 
 
+
+
 Data binding:
 		--> Convert data from json to java POJO
 		--> Spring use jackson for data binding of json

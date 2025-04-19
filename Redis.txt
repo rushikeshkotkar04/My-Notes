@@ -1,0 +1,14 @@
+Redis
+A cache Which store the database calls for fast retrieving the date it stores call so it will help to fast data queries
+
+COMMANDS in terminal
+redis-cli ping
+redis-cli -> To start interaction with redis
+
+
+set var_name value  -> to set a variable value
+get var_name -> to get or print The value which is sat to particular var_name
+
+	Naming conve in Redis:
+		set <Table_name>:<ID> Value
+		So redis can group values according to table name in folder

@@ -585,6 +585,8 @@ JPQL:
 		
 
 
+
+
 Data binding:
 		--> Convert data from json to java POJO
 		--> Spring use jackson for data binding of json
@@ -894,7 +896,7 @@ Distrubuted tracing:
 	
 	we use spring cloud sleuth and zipkin to visualize the distrubuted tracing info 
 
-	we have to add zipkin properties and download zipkin in system
+	we have toadd zipkin properties and download zipkin in system
 	
 	we also create own spanIds using Tracer we can use Tracer().nextSpan().name("name ofspan")
 	

@@ -5,7 +5,6 @@ Array List:
 Linked List:
 	--size(),get(),set(),sort(),contains(),clear(),first(),last();
 	--Same as Linkedlist but its is doubly one
-	--Faster for data manipulation
 
 Vector:
 	--Same as Array list but it is synchronized

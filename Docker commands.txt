@@ -1,0 +1,93 @@
+------------------------------------------------------DOCKER------------------------------------------------------
+
+Docker Images:
+	It contains set of instructions to run a applications containing command to install some set of 	tools,template and code of the application.
+
+
+Docker Container:
+	It helps to run a particular image of any application and the data inside container is always isolated no one can access the data of the container outside of the container. 
+
+You can Run a Image on differenent container number of time how much u want.
+The data from a container wont be access inside another container for a same Image.
+
+Port Mapping:
+	As you cant acceess anything Outside of the container so the Ports are set inside cant be accessable
+	outsides so u have to map a port to inside port so it will be accessable.
+
+Environment Variable:
+	As u can not access anything outside container then whenever u have to sent a environment variable to
+	inside of the container like data base password,env port number,databse localhost then u can send using 	[option -e].
+ 
+
+Dockerrization nodeJS File:
+	To docker a NodeJs project u have to create a file ,Create Dockerfile and give all the thing to it like:	FROM -> Using FROM take a Image of  (OS/framework)
+	RUN  -> To isnatll all requiremnet for a project use RUn
+	COPY -> To Copy all the file in side project use "COPY src dest" command 
+	RUN  -> TO Run a code
+	ENTRYPOINT -["command","file name"] -> Which file should be Run
+	
+	COMMAND TO BUILD CUSTOM DOCKER IMAGE
+	docker build -t <IMAGE NAME>
+
+	FOR PUSHING IMAGE INSIDE DOCKER REPOSITORY
+	docker push <Docker image name which is created after creating repository> <path of the Dockerfile>
+
+Docker Compose:
+  	Basically it is used to run multiple container at a time,As on real time project we need to run  multiple 	docker applications on a local system to do so we can use DOCKER COMPOSE.
+	For this u have to write all the required Image in a file docker-compose.yml so it can run all images 	inside it.
+ 	
+	COMMAND FOR MAKE DOCKER COMPOSE:
+	docker compose up 
+	docker compose up -d -> Run in background (-d -> detached Mode)
+
+	COMMAND FOR REMOVE DOCKER COMPOSE:
+	docker compose down 
+
+
+Docker Network:
+	To communicate with other container or non Docker servers we can use network to connect and communicate
+	
+	For communicating Over netwrok we can use ping command 
+	e.g. ping website / other container name
+	There are three type of network:
+	1] Bridge -> A default one which so it can be connect with other which has IP Address and other things			    over internet
+	2] Host -> A Host network which is hosted by container over internet. 
+		  If container Running on host network we do not need to give port mapping
+	3] none -> It doenst have Internet Access so cant ping to website.
+	
+	CREATING CUSTOM NETWORK:
+ 		docker network create -d mode (bridge,host,none)> <Network_Name>
+
+	
+Docker flags
+
+-it -> interactiveTTy -> To keep attach terminal to the docker withount returning back to our terminal
+-p -> to expose a LocalHost addresse outside the container so any one can access webisite of that access the website
+-e -> To passing the environment variable inside the docker container
+-d -> driver
+--name -> To name the container while running/creating 
+--network ->To connect a container to network like Host/Overlay
+
+
+
+Docker commands
+
+1] docker run -lt <Image_Name> -> Run a docker container or if container is not present it will make new container 
+	docker run -lt --name <CUSTOME NAME FOR CONTAINER> <Image_Name> 
+2] docker start container-name ->Start docker container 
+3] docker stop container-name -> To Stop docker container
+4] docker exec container-name <command> -> To execute the command on docker container
+5] docker exec -it container-name bash -> To keep terminal without exit-> To go inside container
+6] docker exec -it container-ID bash -> To keep terminal without exit
+7] docker run -it -p <portoutside:poert_no._inside container> -p <portoutside:poert_no._inside container>....         
+   <ImagerName>  -> To expose the localHost adresse outside the container
+8] docker run -it -p <portoutside:poert_no._inside container> -p <portoutside:poert_no._inside container>....         
+   <ImagerName> -e <key=Value> -e <key=Value>
+9]  my_docker_image_for_nodejs_application <path of our DockerFile>
+10] docker push <Docker image name which is created after creating repository> <path of the Dockerfile>
+11] docker run -it --network-<network_name> <image_name> -> To run on particular network
+12] docker network create -d <mode (bridge,host,none)> <Network_Name>
+
+
+
+

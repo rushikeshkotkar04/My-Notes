@@ -3,7 +3,7 @@ JWT
 	Use to securly transmit data betwenn two parties
 	It is string consist 3 parts seperated by dots
 	1.Header
-		Consist 2 parts type of algorithm and type of tokens
+		Consist 2 parts type of algorithm and type of tocken
 	2.Payload
 		It is data which is beign sent
 	3.Signature

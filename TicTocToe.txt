@@ -1,0 +1,181 @@
+
+    class Player
+    {
+        public static Dictionary<string, string> Pieces = new Dictionary<string, string>();
+        public static Queue<string> queue = new Queue<string>();
+
+        public void RegisterPlayer(string name, string piece)
+        {
+            Pieces[name] = piece;
+            queue.Enqueue(name);
+        }
+    }
+
+    class Board
+    {
+        public int n;
+        int m;
+        public string[,] board;
+
+        public Board(int n)
+        {
+            this.n = n;
+            this.board = new string[n, n];
+        }
+
+        public void FillBoard()
+        {
+            for (int i = 0; i < this.n; i++)
+            {
+                for (int j = 0; j < this.n; j++)
+                {
+                    this.board[i, j] = "[" + i + ',' + j + "]";
+                }
+            }
+        }
+    }
+
+    class Game
+    {
+        Board board;
+
+        public Game(Board board)
+        {
+            this.board = board;
+        }
+
+        public void StartGame()
+        {
+            for (int i = 0; i < board.n; i++)
+            {
+                for (int j = 0; j < board.n; j++)
+                {
+                    Console.Write(this.board.board[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+
+            bool gm = true;
+            int gameplay = 0;
+
+            while (gm)
+            {
+                string t = Player.queue.Dequeue();
+                Console.WriteLine(t + " Its Your Turn");
+                Console.WriteLine("Enter Your Position Places");
+                int indi = Convert.ToInt32(Console.ReadLine());
+                int indj = Convert.ToInt32(Console.ReadLine());
+                this.board.board[indi, indj] = Player.Pieces[t];
+                bool flag = false;
+                string first = this.board.board[0, 0];
+                int c = 0;
+
+                for (int i = 0; i < board.n; i++)
+                {
+                    if (this.board.board[i, i].Equals(first, StringComparison.OrdinalIgnoreCase))
+                    {
+                        c += 1;
+                    }
+                }
+
+                if (c == board.n)
+                {
+                    flag = true;
+                }
+
+                first = this.board.board[0, 2];
+                c = 0;
+
+                for (int i = 0; i < board.n; i++)
+                {
+                    if (this.board.board[i, board.n - i - 1].Equals(first, StringComparison.OrdinalIgnoreCase))
+                    {
+                        c += 1;
+                    }
+                }
+
+                if (c == board.n)
+                {
+                    flag = true;
+                }
+
+                for (int i = 0; i < board.n; i++)
+                {
+                    first = this.board.board[i, 0];
+                    c = 0;
+
+                    for (int j = 0; j < board.n; j++)
+                    {
+                        if (this.board.board[i, j].Equals(first, StringComparison.OrdinalIgnoreCase))
+                        {
+                            c += 1;
+                        }
+                    }
+
+                    if (c == board.n)
+                    {
+                        flag = true;
+                    }
+                }
+
+                for (int i = 0; i < board.n; i++)
+                {
+                    first = this.board.board[i, 0];
+                    c = 0;
+
+                    for (int j = 0; j < board.n; j++)
+                    {
+                        if (this.board.board[j, i].Equals(first, StringComparison.OrdinalIgnoreCase))
+                        {
+                            c += 1;
+                        }
+                    }
+
+                    if (c == board.n)
+                    {
+                        flag = true;
+                    }
+                }
+
+                if (flag)
+                {
+                    Console.WriteLine(t);
+                    Console.WriteLine(t + " is the Winner of the Game");
+                    gm = false;
+                }
+
+                Player.queue.Enqueue(t);
+                c = 0;
+
+                for (int i = 0; i < board.n; i++)
+                {
+                    for (int j = 0; j < board.n; j++)
+                    {
+                        if (this.board.board[i, j].Equals("[" + i + ',' + j + "]", StringComparison.OrdinalIgnoreCase))
+                        {
+                            c += 0;
+                        }
+                        else
+                        {
+                            c += 1;
+                        }
+                    }
+                }
+
+                for (int i = 0; i < board.n; i++)
+                {
+                    for (int j = 0; j < board.n; j++)
+                    {
+                        Console.Write(this.board.board[i, j] + " ");
+                    }
+                    Console.WriteLine();
+                }
+
+                if (c == board.n * board.n)
+                {
+                    Console.WriteLine("Game Tied");
+                    gm = false;
+                }
+            }
+        }
+    }

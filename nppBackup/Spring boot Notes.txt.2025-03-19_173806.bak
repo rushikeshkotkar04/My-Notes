@@ -132,7 +132,6 @@ Spring Boot
 								7.NESTED: If a transaction exists, it will create a nested transaction.
 							
 							Isolation Levels:
-								
 					
 							
 							rollbackOn: Based on exception throw
@@ -281,7 +280,7 @@ Spring Boot
 					//using basic Authentication
 					http.httpBasic(Customizer.withDefaults());
 					//disable CSRF
-					//Not required f  or POST,DELETE,PUT,PATCH ...
+					//Not required for POST,DELETE,PUT,PATCH ...
 					http.csrf(csrf->csrf.disable());
 					return http.build();
 				}
@@ -449,7 +448,7 @@ Connecting more than one database:
 	-We have to give name to each connection string in application.properties
 	-As it is not general so we have to manually configure it for project
 	
-	- we have to create the entityManager for each and give path of entities for that manager as a package so inside package all this related to the entity
+	- we have to create the entityManager for each and give path of entities for that manaer as a package so inside package all this related to the entity
 	- also name the bean as entityManager as it is only valid so only it will be known to Springboot
 		syntax:
 			@ConfigurationProperties("spring.datasource.mysql")
@@ -585,6 +584,8 @@ JPQL:
 		
 
 
+
+
 Data binding:
 		--> Convert data from json to java POJO
 		--> Spring use jackson for data binding of json
@@ -607,7 +608,7 @@ DEVELOPMENT THINGS
 
 Exception Handling:
 			
-		It extends by RunTimeException and constructor calls to the super class
+		It extends by RunTimeException and cunstructor calls to the super class
 		@ControllerAdvice @RestControllerAdvice @ExceptionaHandler
 
 Rest API Design:
@@ -894,7 +895,7 @@ Distrubuted tracing:
 	
 	we use spring cloud sleuth and zipkin to visualize the distrubuted tracing info 
 
-	we have to add zipkin properties and download zipkin in system
+	we have toadd zipkin properties and download zipkin in system
 	
 	we also create own spanIds using Tracer we can use Tracer().nextSpan().name("name ofspan")
 	
