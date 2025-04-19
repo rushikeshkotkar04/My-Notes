@@ -12,3 +12,5 @@ get var_name -> to get or print The value which is sat to particular var_name
 	Naming conve in Redis:
 		set <Table_name>:<ID> Value
 		So redis can group values according to table name in folder
+
+
