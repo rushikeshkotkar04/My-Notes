@@ -230,15 +230,13 @@ Spring Boot
 				@Valid:
 					Checks validation of entity fields like @NotNull,@Size,... there given before @RequestBody we use to apply on that input
 				
-		GraphQL:
-		
+				
 				@Argument:
 					To get parameters in the graphql from method as we do in restApi like @RequestParams or @PathVariables
 				
-				@QueryMapping:
-		
+				@QueryMapping
 				
-				@MutationMapping:
+				@MutationMapping
 				
 				
 		Maven:

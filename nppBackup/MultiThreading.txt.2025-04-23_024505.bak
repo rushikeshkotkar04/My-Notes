@@ -218,7 +218,7 @@ Excutors Framework:
 		-Non blocking execution
 		-Deamon Thread by default
 		-Has suppyAsync() to call a callable<>
-		-runAsync(Runnable runnable) :- To perform some site operations like saving data and all.
+		-runAsync(Runnable runnable) :- To perform some site operations like saving data and all..
 		-.get() method to make it wait until it gets completed to get single value throws checked exception
 		-.join()  --> it returns when complete throws unchecked exception
 		-.thenApply() --> to do something with the result
