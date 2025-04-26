@@ -94,7 +94,6 @@ Lock:
 		-For same thread it can go in all the methods where we locked and count and uncount locks and unlocks
 		
 		
-		
 	2.Interruptinly()--> It helps to archieve interrupt
 	
 	3.ReentrantReadWriteLock():

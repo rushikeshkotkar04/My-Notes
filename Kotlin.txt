@@ -1,0 +1,41 @@
+Kotlin Backend
+	
+	pillars of android:
+		Activities
+		services
+		broadcast receiver
+		Intent
+	
+
+	
+	val variable=	findViewById<Type>(R.id.IdOffield)
+	to perform operation
+		btn.function/implementaion { What u wanna do }
+	
+	onCreate():
+	
+	setOnClickListener{} : To do task after clicking
+	setOnClickListener() :
+	
+	splash screen: We get icon of the app on screen big the all 
+	
+		we have two tyoes:
+			1.Splash API:
+			2.
+	
+	Intent: Send one part to another part
+		-It also takes some data on next part
+		
+		To go on another button after button click
+		val btn = findViewById<Button>(R.id.click_me)
+		btn.setOnClickListener {
+            val intent=Intent(this,MainScreen::class.java)
+			intent.putExtra()
+			startActivity(intent)
+		}
+		
+		get and assign the value came by intent
+		
+			val recievedbyintent=intent.getStringExtra("name")
+			val txtView=findViewById<TextView>(R.id.txt1);
+			txtView.text=recievedbyintent

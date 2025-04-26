@@ -6,7 +6,6 @@ we have assertEquals(),assertNotNull() alot didnt mention
 @Test
 	-Which ever method we want to run as Test we have to annote it as @Test
 	
-	
 
 @Disabled: To skip the test case
 @RepeatedTest: To reapet the test case

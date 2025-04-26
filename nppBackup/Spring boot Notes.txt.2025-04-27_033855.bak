@@ -919,6 +919,3 @@ My my own knowledge
 1.Controller -> Accesing data using entity manager
 2.Controller -> DAO(data access layer) -> Accesing data
 3.Controller -> service -> DAO -> Accesing data
-
-
-

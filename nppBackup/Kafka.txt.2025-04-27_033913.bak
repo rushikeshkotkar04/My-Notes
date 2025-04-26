@@ -48,7 +48,6 @@ Kafka :
 		ordered and immutable
 	
 	
-	
 	Partitioner:
 		if key in send data it decided where to append it based on hashing and key
 	

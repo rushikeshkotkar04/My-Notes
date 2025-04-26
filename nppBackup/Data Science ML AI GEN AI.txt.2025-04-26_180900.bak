@@ -1416,7 +1416,6 @@ Deep Learning:
 				The food is good         1
 				The food is bad          2
 				The food is not good     3
-				
 			
 			Convert word to vec of data set using any techique as per requirement
 			
@@ -1424,50 +1423,16 @@ Deep Learning:
 				
 				I/P --> Hidden layer(with feedback loop) --> O/p Layer
 				
-				feedback loop:
-					What ever output from hidden layer is send to all the nodes in hidden leyer with new weights to make it more perfect
+				feedback loop
+					What ever output from hidden layer is send to all the nodes in hidden leyer to make it more perfect
 					
 			
 				
 				Forward propogation:
 					in forward propogation, as at a time a single word goes to neurons as per sequence thr out of that NN is shared to hidden layers of next word
-					and at last RNN we use output with the activation function
-				
-				
-				
-				Backward propogation:
-					-To reduce the loss between actual output and our output
-					-To reduce the loss we update all the weights
-					-In this case we have to update based on timestamp in backword direction
-					-we have update all weights like inital wait before the hidden layers and hidden layes itself 
 					
-				
-				Problems with RNN:
-					-lets suppose we are predecting word if we ahve a longer sentence,as in RNN we give
-					   a single word at a time and prediction is depend on some words which are too far from each other it will take a time and has less perfection 
-						also there is chances of getting value near/approximtly to 0 most of the time in back propogation
-					
-					-It has dependacy on nearest on not on farthrest one if we wanna predict based on a word away from it it wont predict perfectly
-					
-					
-			LSTM RNN:
-				solves the problem of simple RNN
-			
-			
-			Word Embeding:
-				-Technique to convert word into vector
-				-A layer to convert word into vector in NN
-				
-				
-				
-				
-			Embeding Layer:
-				A layer helps to convert words into vectors
-				It uses word embeding
-	
-	pad_sequences:
-		TO convert all sentetnce in equal number of words as RNN need same number of words in every sentence
-				
+		
+
 TensorFlow:
 	We call ANN as Sequential model in tensorflow
 	

@@ -2,6 +2,7 @@ Kafka :
 	Kafka Cluater:
 		-A group of kafka broker
 	
+	
 	Kafka Broker:
 		-A server a kafka is running
 	
@@ -46,7 +47,6 @@ Kafka :
 		actual data of topics present here
 		
 		ordered and immutable
-	
 	
 	
 	Partitioner:

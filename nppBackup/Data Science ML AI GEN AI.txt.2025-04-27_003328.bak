@@ -1464,9 +1464,7 @@ Deep Learning:
 			Embeding Layer:
 				A layer helps to convert words into vectors
 				It uses word embeding
-	
-	pad_sequences:
-		TO convert all sentetnce in equal number of words as RNN need same number of words in every sentence
+			
 				
 TensorFlow:
 	We call ANN as Sequential model in tensorflow

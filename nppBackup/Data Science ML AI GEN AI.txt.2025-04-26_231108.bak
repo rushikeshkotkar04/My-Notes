@@ -1416,7 +1416,6 @@ Deep Learning:
 				The food is good         1
 				The food is bad          2
 				The food is not good     3
-				
 			
 			Convert word to vec of data set using any techique as per requirement
 			
@@ -1445,29 +1444,10 @@ Deep Learning:
 				Problems with RNN:
 					-lets suppose we are predecting word if we ahve a longer sentence,as in RNN we give
 					   a single word at a time and prediction is depend on some words which are too far from each other it will take a time and has less perfection 
-						also there is chances of getting value near/approximtly to 0 most of the time in back propogation
 					
-					-It has dependacy on nearest on not on farthrest one if we wanna predict based on a word away from it it wont predict perfectly
+					-Also there is chances of getting value near/approximtly to 0 most of the time in back propogation
 					
 					
-			LSTM RNN:
-				solves the problem of simple RNN
-			
-			
-			Word Embeding:
-				-Technique to convert word into vector
-				-A layer to convert word into vector in NN
-				
-				
-				
-				
-			Embeding Layer:
-				A layer helps to convert words into vectors
-				It uses word embeding
-	
-	pad_sequences:
-		TO convert all sentetnce in equal number of words as RNN need same number of words in every sentence
-				
 TensorFlow:
 	We call ANN as Sequential model in tensorflow
 	

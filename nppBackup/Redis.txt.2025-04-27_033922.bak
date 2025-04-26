@@ -6,7 +6,6 @@ redis-cli ping
 redis-cli -> To start interaction with redis
 
 
-
 set var_name value  -> to set a variable value
 get var_name -> to get or print The value which is sat to particular var_name
 
