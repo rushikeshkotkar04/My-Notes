@@ -1498,7 +1498,7 @@ Deep Learning:
 					Dataset
 					
 					
-					Text Paragram                                 O/p
+					Text Paragram                                O/p
 					------------------------------------------------------
 				  1.I Went to Restaurent and order burger.        1
 					The burger looked testy and crispy.
@@ -1509,60 +1509,24 @@ Deep Learning:
 					were used,so it was good
 					
 					
-					-In this while working the vectors of the words against required vextors keep on changing
-					as per requiremnet some values become 0 some increases like that till all words getting done
 					
 					
 					
 					
-			3.GRU RNN: (Gated recurrent unit)
-				
-				-as LSTM fogets or add or output gate the memory in long term seperatly withough seeing Longterm memory before operation
-				 GRU has Long term and short term as same
-				 we combine previous long term data + input and pass to following two gates
-				 1.Reset gate and 2.update gate
-				 
-				 1.Reset gate:
-					-Reset values based on previous longer term data+
-						input and its sigmoid and pointwise operation with X
-						and pass it to tanH and with pointoperation with X we get 
-						temporary hidden state and another point operation with x with update gate 
-						get final hidden state
-					-
-						
-				 2.Update gate:
-				
-					it gets input and previous long term data and pass to sigmoud
-					and with its output it is paases to get temporary hidden state
-					as well as update long term data using poit wise X operation  by substracting 1 from all vectors
-			
-			
-			
-			
-			4.Bidirectional RNN:(Either SimpleRNN,LSTM,GRU)
-				
-				
-			
-			
-			
+			3.GRU RNN
 			
 			Word Embeding:
 				-Technique to convert word into vector
 				-A layer to convert word into vector in NN
 				
-		
+				
 				
 				
 			Embeding Layer:
 				A layer helps to convert words into vectors
 				It uses word embeding
 		
-		
-		
-		
-		
-		
-		
+	
 	pad_sequences:
 		TO convert all sentetnce in equal number of words as RNN need same number of words in every sentence
 				

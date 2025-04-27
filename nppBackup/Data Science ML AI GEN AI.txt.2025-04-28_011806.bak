@@ -1536,33 +1536,18 @@ Deep Learning:
 					and with its output it is paases to get temporary hidden state
 					as well as update long term data using poit wise X operation  by substracting 1 from all vectors
 			
-			
-			
-			
-			4.Bidirectional RNN:(Either SimpleRNN,LSTM,GRU)
-				
-				
-			
-			
-			
-			
 			Word Embeding:
 				-Technique to convert word into vector
 				-A layer to convert word into vector in NN
 				
-		
+				
 				
 				
 			Embeding Layer:
 				A layer helps to convert words into vectors
 				It uses word embeding
 		
-		
-		
-		
-		
-		
-		
+	
 	pad_sequences:
 		TO convert all sentetnce in equal number of words as RNN need same number of words in every sentence
 				

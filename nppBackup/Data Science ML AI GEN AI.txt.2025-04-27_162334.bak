@@ -1450,119 +1450,21 @@ Deep Learning:
 					-It has dependacy on nearest on not on farthrest one if we wanna predict based on a word away from it it wont predict perfectly
 					
 					
-			2.LSTM RNN:(Long short term memory)
-			 
+			LSTM RNN:
 				solves the problem of simple RNN
-				
-				problem statement: Predict next word in sentence
-				
-					1.The colour of the sky is _____  (Ans:Blue)
-					
-					2.I grew up in india,....(more words).... and I speak
-					  fluent _______  (Ans:Hindi)
-					  
-					  as here the prdiction is depend on a word away from current
-					
-					
-					As in Simple RNN (we can call it Short Term RNN) which is not helful in this type scenarios
-					but in LSTM RNN it contineuuly keep needed info perfement and when needs it uses it
-				
-				in short LSTM RNN is first it forget unnessary thing using point oeparting cross or dot operatiob 
-				then add new things if required using add operation with inputgate and candidate gate to the memory then with same input
-				gate we tanH operation and output gate will store it to hidden layer for future use
-
-				
-				LSTM RNN structure
-					
-				
-				->Memory      -->0
-				                forget gate
-								
-				->HiddenState
-				
-				1.Forget Gate:
-					Based on the context this forget gate will let go some info or will keep some info
-			
-				2.Input Gate and Candidate memory:
-					we are adding info to the input and after operation make the input better
-					also adding this input to the long term memory for future
-			
-			
-				3.Output Gate:
-					with the long term memory and input data we do tanH and retaim to hidden state
-					
-				
-				
-				Training data with LSTM RNN:
-					
-					Dataset
-					
-					
-					Text Paragram                                 O/p
-					------------------------------------------------------
-				  1.I Went to Restaurent and order burger.        1
-					The burger looked testy and crispy.
-					But burger is not good for health.
-					It has lot of fats,cholestrol.
-					But this burger was made with 
-					whey protein and only vegitables
-					were used,so it was good
-					
-					
-					-In this while working the vectors of the words against required vextors keep on changing
-					as per requiremnet some values become 0 some increases like that till all words getting done
-					
-					
-					
-					
-			3.GRU RNN: (Gated recurrent unit)
-				
-				-as LSTM fogets or add or output gate the memory in long term seperatly withough seeing Longterm memory before operation
-				 GRU has Long term and short term as same
-				 we combine previous long term data + input and pass to following two gates
-				 1.Reset gate and 2.update gate
-				 
-				 1.Reset gate:
-					-Reset values based on previous longer term data+
-						input and its sigmoid and pointwise operation with X
-						and pass it to tanH and with pointoperation with X we get 
-						temporary hidden state and another point operation with x with update gate 
-						get final hidden state
-					-
-						
-				 2.Update gate:
-				
-					it gets input and previous long term data and pass to sigmoud
-					and with its output it is paases to get temporary hidden state
-					as well as update long term data using poit wise X operation  by substracting 1 from all vectors
-			
-			
-			
-			
-			4.Bidirectional RNN:(Either SimpleRNN,LSTM,GRU)
-				
-				
-			
-			
 			
 			
 			Word Embeding:
 				-Technique to convert word into vector
 				-A layer to convert word into vector in NN
 				
-		
+				
 				
 				
 			Embeding Layer:
 				A layer helps to convert words into vectors
 				It uses word embeding
-		
-		
-		
-		
-		
-		
-		
+	
 	pad_sequences:
 		TO convert all sentetnce in equal number of words as RNN need same number of words in every sentence
 				
