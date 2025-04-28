@@ -1786,7 +1786,6 @@ Deep Learning:
 						 different set of Q,K,V and its weights to get multiple values to get some more imporantance captured
 						
 						
-
 					-Feed Forward NN:
 						-After getting contextual vectors from self attention
 						-In feedforward it gives single vector from all contextual vectors
@@ -1794,15 +1793,8 @@ Deep Learning:
 						How to do that:
 							We concatinate all the heads and assign new weights matrix
 							and the matrix and the combined heades dot product and gets value
-						
-						and that all ouputs from feed forward pass to next encoder in chain
-						
+							
 					
-					-Positional Encoding:
-						
-						
-						
-						
 					
 						
 										

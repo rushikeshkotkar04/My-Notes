@@ -1638,7 +1638,7 @@ Deep Learning:
 						Language translation (English to French)
 					
 					
-					-In a Transformaer:
+					In a Transformaer:
 						It has Encoder and Decoder
 						
 						in a encoder it has multiple encoder and input goes from one to other encoders
@@ -1657,7 +1657,7 @@ Deep Learning:
 							and then it is passed to next chain of encoders and do same tasks
 					
 					
-					-Self Attention:
+					Self Attention:
 						as we have vectors of word 
 						a self attention converts a words into new vector to contextual vectors
 						
@@ -1772,40 +1772,8 @@ Deep Learning:
 								
 								
 								5.Apply Softmax Activation:
-									-It helps to creat attention weights for each word(vectors) in the text
-									
+									-It helps to creat attention weights
 								
-								6.Weighted sum of values:
-									we multiply the attention weights to the corrosponding value vectors
-									
-									formulla of :
-										Output(word)= Sum(Attention Score of word * V(that word))
-					
-					-Multi Head Attention:
-						-Same as previous but instead of single Attention score we can pass it with 
-						 different set of Q,K,V and its weights to get multiple values to get some more imporantance captured
-						
-						
-
-					-Feed Forward NN:
-						-After getting contextual vectors from self attention
-						-In feedforward it gives single vector from all contextual vectors
-						
-						How to do that:
-							We concatinate all the heads and assign new weights matrix
-							and the matrix and the combined heades dot product and gets value
-						
-						and that all ouputs from feed forward pass to next encoder in chain
-						
-					
-					-Positional Encoding:
-						
-						
-						
-						
-					
-						
-										
 								
 			Word Embeding:
 				-Technique to convert word into vector
