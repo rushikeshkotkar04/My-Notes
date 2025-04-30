@@ -2060,35 +2060,14 @@ Deep Learning:
 										
 										-For each token the sequence of th e mask should indicate which tokens 
 										it can attend to (should not affect by padded tokens)
-						
-								-As Decoder takes all output Embedding vectors word vecr of at once with positional Embedding
-						
-						-Encoder-decoder Multihead Attention:
-							-We get K,V from output from encoder and Query decoder selft attention and normlization
-							-As Q is the main things of output we want and K and V are to be used by each decoder in its encoder-decoder attention layer
-								which helps decoder to focus on appropriate places in the input sequence
-							
-						
-						-The final Linear and Softmax Layer:
-							-Converting vectors into our output word
-							It has 2 parts:
-								1.Linear
-								2.Softamx
+										
+						-Encoder -decoder Multihead attention
 								
-								1.Linear:
-									-This layer is simply fully connected NN that projects the vector produce
-									by the stack of decoder called as Logits Vector
-									
-									Logits Vector:
-										-Suppose our model knows 10000 words then Logits vectpr is 10000 cells wide
-										-all blogs in logit vector is corrosponds a to score of a unique score
-									
-								2.Softmax:
-									-It is for multiclass classification
-									-As soon as pass vector each vector gives probability then based on that we predict word
-									-The softmax layer turns those scores into probabilities
-									-Then the cess with hight probability is chosen as output and the word associated with it is produced as the output
-									
+								-As Decoder takes all output Embedding vectors word vecr of at once with positional Embedding
+								
+								
+								
+								
 							
 
 							

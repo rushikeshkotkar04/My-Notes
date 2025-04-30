@@ -2081,14 +2081,9 @@ Deep Learning:
 									
 									Logits Vector:
 										-Suppose our model knows 10000 words then Logits vectpr is 10000 cells wide
-										-all blogs in logit vector is corrosponds a to score of a unique score
+										-it corr
 									
-								2.Softmax:
-									-It is for multiclass classification
-									-As soon as pass vector each vector gives probability then based on that we predict word
-									-The softmax layer turns those scores into probabilities
-									-Then the cess with hight probability is chosen as output and the word associated with it is produced as the output
-									
+								
 							
 
 							

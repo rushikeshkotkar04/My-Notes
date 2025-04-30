@@ -1674,7 +1674,7 @@ Deep Learning:
 						we need ro derive 3 imp vectors
 						
 						1.Input:vectors are Queries,keys and values
-							Queries:(Q) : 64 generally
+							Queries:(Q)
 								the vector represent the vector for which we are calculating attention
 								it help to determine imp of other token in the context of current token
 								
@@ -1683,7 +1683,7 @@ Deep Learning:
 								-help where to focus we use dot product of query and key vectors
 								-contribute to understand cuttern token and rest of the sequence
 							
-							Key:(K) : 64 generally
+							Key:(K)
 								all the tokens in sequnce used to compare the query vector to calculate attention score
 								all the words(in short)
 								
@@ -1691,7 +1691,7 @@ Deep Learning:
 									-to get relevence or compatibility of each token to get score
 									-get most relevent info of sequence
 								
-							Value:(V) : 64 generally
+							Value:(V)
 								Actual info that will aggregate to form a output of attention mechanism
 								
 								imp:
@@ -1781,7 +1781,7 @@ Deep Learning:
 									formulla of :
 										Output(word)= Sum(Attention Score of word * V(that word))
 					
-					-Multi Head Attention:(8 generally)
+					-Multi Head Attention:
 						-Same as previous but instead of single Attention score we can pass it with 
 						 different set of Q,K,V and its weights to get multiple values to get some more imporantance captured
 						
@@ -1838,14 +1838,14 @@ Deep Learning:
 	
 									
 									
-					-Layer Normalization in tranformer:
+					Layer Normalization in tranformer:
 						
-							-Convert all values in between range of number normally for each and evey value
+							-Convert all values in between range of 0-1
 							-After Multi head attention we have addition and Normalization layer
 							-Before the Feed Forward NN
 							-We have to prived input with positional encoding to the addition and Normalization layer
 							
-							
+							-
 							-Residuals:
 								-layer after Multi head attention
 								-provides additional signals to layer normalization about input encoding+positional encoding from self attention
@@ -1854,8 +1854,7 @@ Deep Learning:
 							-we take every (input substract with mean value) and devide with stander daviation
 							-After all operations on input we get output and that can be in different distrubution 
 							-so make sure that in normal distrubution we will apply the normalization on output too
-							
-							
+							-
 							
 							Types of Normalization:
 								1.Batch Normalization
@@ -1869,11 +1868,8 @@ Deep Learning:
 								-in Bacth for output values we take all values once and apply normalization
 								-we use zScore normalization formula to do it
 								
-								-if there not many zeros so can't affect all distrubution
-								
-								-Use of Batch Normal:
-									-if there not many zeros so can't affect all distrubution
-									-so much impact on the distrubation
+								_if there not many zeros so cant affect all distrubution
+									
 								
 								
 								
@@ -1898,11 +1894,6 @@ Deep Learning:
 							
 							
 							-Gamma and Beta:(Learnable parameters)
-								-If we do not want normalize we can use Beta and Gamma
-								-Specifically use during traning NN
-								
-								
-								
 								
 							Advantages:
 								-To improve training stability
@@ -1910,188 +1901,13 @@ Deep Learning:
 								-Faster conversions
 								
 							
-					-Encoder architecture:
-						-Input -> Words to vector+Positional Encoding
-						(every Words convert into across 512 diamentionals vectors)
-						
-						-After Words to vector+Positional Encoding we have multiheader attention
-						-After Multi Head Attention we use addition and normalization(Residuals)
-						-After Residuals we pass to feed forward NN
-						
-						-Residuals:(Skip connections NN)
-							-layer after Multi head attention
-							-provides additional signals to layer normalization about input encoding+positional encoding from self attention
-							
-							-It improves gradient flow
-							 so convergens will be faster
-							
-							-Enables training of deeper networks
-							
-							
-							
-							How it helps :
-								-It creates short path gradient to flow directly thwo the network
-								so no loss during self attention and all other steps during stack of encoders
-								-It improves gradient flow
-								 so convergens will be faster
 								
-								-Enables training of deeper networks
-							
-						Why Feed Forward NN:
-							-It solves Linear function problem
-							-It helps to capture non linear function problem
-							-Its if for solve non linear function problem
-							-It adds Non-Liniearity
-							-Processing each token represetation/ position indepenedantly of input
-							-Transforming this represation further and allows the model to learn richer representation
-							-Adds depth to the model 
-							-And as more depth increases more learning gets from the data to model 
-							-Increases model parameter which helps generlize train and test data
-							
-					
+						
+						
+						
+						
 					
 						
-					-Decoder In Transformer:
-						-The transformer decoders is resposible for generating the outputsequence one token at a time using the encoder's output 
-						and the previously generated tokens
-						
-						
-
-						-It has 3 component:
-							1.Masked multi head self attention
-							1.Multi Head Attention(Encoder-Decoder Attention)
-							2.Feed forword NN
-						
-						
-						Decoder works on 2 mechanisms:
-							1.Training Mechanism
-							2.Inference Mechanism
-						
-						-During training we give real output also to decoder to train it perfectly
-						
-						-It has 3 component:
-							1.Masked multi head self attention
-							1.Multi Head Attention(Encoder-Decoder Attention)
-							2.Feed forword NN
-						
-						
-							1.Masked multi head self attention:
-								1.I/p embedding + positional embading + Padding to make length equal of all input and output
-								2.Linear projection for Q,K,V
-								3.Selaed (Gamma Beta) dot product attention
-								4.Mask applications
-								5.Multihead attention
-								6.Concatination and final Linear Projection
-								7.Residual connection and layer normalization
-								
-								
-								In Masked MultiHead Attentions is combination of  above mentioned 2,3,4 points
-									2.Linear projection for Q,K,V : 
-										-in short calculate Q,K,V by multiply WQ,WK,WV to the input+positional embeding
-										
-									3.Selaed dot product attention :
-										-Calculate Attention score
-										
-											Attention Score=(Q*K(Transpose))/sqrt(dimentions of k)
-										
-										
-									4.Mask applications:
-										_masking in transformer architecture is essential for several reasons.It helps manage the
-										Structure of the sequence beign and ensure the model behaves correctly
-										during training inference.Reasons for using it:
-											1.Handling variable length sequence with padding mask : Descriptin mentioned below
-											2.maintaining autoregressive property with look-ahead mask : Descriptin mentioned below
-											
-											
-											
-										1.Look Ahead Mask
-										2.Padding mask
-										
-										-It helps managing the structure of the sequences being processed
-										and ensures the model behaves correctly during training and inferencing
-										
-										
-										Reasons for masking:
-											1.Handling variable length sequences with padding mask
-												Purpose:
-													-To handle sequences of diffent lengths in batch
-														-Padding can influence attentionmechanism/In short it affect attention scores can give inccorect / biased padding
-													-To ensure that padding tokens which are added to make sequences of unifor length do not affect the model prediction
-													
-								
-											
-											
-										
-										1.Look Ahead Mask:
-											-It is use to maintain auto regressive property
-											-To enusre that each position in the decoder output sequence can only attend to the previous postition but no future position
-											-to work with different Seq2Seq task like:
-												1.Language modeling
-												2.Language Translation
-												
-											-To calculate this mask:
-												we just have dotproduct of previous context with word vector
-												
-											
-										2.padding mask:
-											-The tokens are ignored which are whcih are padded
-											-To apply this mask:
-												-first we find sequence of words if it not having padding and make it 1s
-												-if there 0 in vectors we give 0 
-											
-											
-											To create this mask we dot product of vectro to that diamtion matrix having all rows same of masking
-										
-										-combine Padding and Look ahead mask:
-											-Element wise multiplication of both 2 mask i.e Padding and Look ahead mask
-											-Wherever in combine mask value is zero(0) we specifically specify infinity
-										
-										-Masked score :
-								
-											-Where ever there is 0 we add -infinity
-											-Dot product of vector and above changed with adding 0 with -infinity
-											
-											-we use -infinity to nullable influence of zero(0) after softmax activation function so the values covert to 0 so attention wt doesnt gets affected
-											
-										-Apply softmax on masked sore
-										-Wt sum of vectors
-											-Attention O/P= Softmax scores* Value (V) vector 
-									
-										
-										-For each token the sequence of th e mask should indicate which tokens 
-										it can attend to (should not affect by padded tokens)
-						
-								-As Decoder takes all output Embedding vectors word vecr of at once with positional Embedding
-						
-						-Encoder-decoder Multihead Attention:
-							-We get K,V from output from encoder and Query decoder selft attention and normlization
-							-As Q is the main things of output we want and K and V are to be used by each decoder in its encoder-decoder attention layer
-								which helps decoder to focus on appropriate places in the input sequence
-							
-						
-						-The final Linear and Softmax Layer:
-							-Converting vectors into our output word
-							It has 2 parts:
-								1.Linear
-								2.Softamx
-								
-								1.Linear:
-									-This layer is simply fully connected NN that projects the vector produce
-									by the stack of decoder called as Logits Vector
-									
-									Logits Vector:
-										-Suppose our model knows 10000 words then Logits vectpr is 10000 cells wide
-										-all blogs in logit vector is corrosponds a to score of a unique score
-									
-								2.Softmax:
-									-It is for multiclass classification
-									-As soon as pass vector each vector gives probability then based on that we predict word
-									-The softmax layer turns those scores into probabilities
-									-Then the cess with hight probability is chosen as output and the word associated with it is produced as the output
-									
-							
-
-							
 										
 								
 			Word Embeding:
