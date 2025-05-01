@@ -1,0 +1,46 @@
+GenAI:
+	-Models used in Deep Learning
+		1.Descriminative Models:
+			-Tasks like classification,prediction,regression
+			-Trained on labeled dataset
+			
+			
+		2.Genrative AI:
+			-Tasks line generating new data 
+			-generate new data trainied on Huge dataset
+			
+			-Models use in GEN AI:
+				1.LLM: Large language model
+				2.LIM:Large Image model
+		
+	-LLM Models:
+	
+	
+		
+RAG (Retrieval Augmented Generation):
+	-If we have Data Source eg PDF:
+		-If we wanna make PDA as Documented QnA Application
+	
+	Steps to create the Applications like this:
+		1.Data injection:
+			-To get data from various sources like
+			1.PDF,2.URLs,3.JSON,4.Imgs,5.Videos
+		
+		2.Split/Devide Data into smaller chunks
+			-Split into:
+				1.Text
+				2.Documented
+			-Some LLMs model has limitation on context size that why it is imp
+	
+LangChain ecosystem:
+	-A framework to use to build GEN AI Application with any LLM model
+	-All model in langChain are open source
+	-LangSmith:
+		-It has LangSmith help to do MLOPs things eg Debugging,Playground,evaluation,Annotaion,Monitoring
+	-LangServe:
+		Create chain as RestAPI and helps to tasks like Deployment
+				
+
+LangChain:
+	-Imp Component of LangChain:
+		-

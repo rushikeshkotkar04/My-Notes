@@ -1,0 +1,15 @@
+GenAI:
+	-Models used in Deep Learning
+		1.Descriminative Models:
+			-Tasks like classification,prediction,regression
+			-Trained on labeled dataset
+			
+			
+		2.Genrative AI:
+			-Tasks line generating new data 
+			-generate new data trainied on Huge dataset
+			
+			-Models use in GEN AI:
+				1.LLM: Large language model
+				2.LIM:Large Image model
+				
