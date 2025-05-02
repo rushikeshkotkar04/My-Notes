@@ -101,18 +101,11 @@ LangChain:
 			-A interface ,Helps to retrive from vector Store and give output
 			-we can use the retreiver to dynamically select the most relevant documents and pass 
 				those in for a given question
-			-Synatx
-				-from langchain.chains.combine_documents import create_stuff_documents_chain
-				-create_stuff_documents_chain is to give a paragaph or stuff in the document where we can get data
+			-from langchain.chains.combine_documents import create_stuff_documents_chain
+			-create_stuff_documents_chain is to give a paragaph or stuff in the document where we can get data
 			
-			-Flow:
-				Input->Retriever->VectorStoreDB
 			
-			create_stuff_documents_chain: 
-				This helper reads the pages you give it and uses the LLM (like ChatOpenAI) to write an answer based on those pages.
 		
-			create_retrieval_chain:
-				This helper combines the library (your vector database, like Chroma or Pinecone) with the page-reader helper to first find the right pages and then answer the question.
 LLM:
 	-Large language model
 	-We have top import model
@@ -137,12 +130,6 @@ Prompt template:
 		
 		-How to make sure our LLM works
 		
-		
-		-For own chat prompt template
-			-from langchain_core.prompts import ChatPromptTemplate
-	
-	
-	
 	-How to use prompt template with llm model:
 		-now it chains to the llm
 		-Syntax:
@@ -165,33 +152,3 @@ Prompt template:
 		response=chain.invoke({"input":"Can you tell me LangSmith"})
 		print(response)
 	-we made a chain of where it is like our input goes fron the first then its output go to second and then thord and go on
-
-
--Message History : 
-	-To make model stateful
-	-To store privous convo
-		
-		
-	## Message History : To make model stateful
-	from langchain_community.chat_message_histories import ChatMessageHistory
-	from langchain_core.chat_history import BaseChatMessageHistory
-	from langchain_core.runnables.history import RunnableWithMessageHistory
-
-	store={}
-	def get_session_history(session_id:str)->BaseChatMessageHistory:
-	  if session_id not in store:
-		store[session_id]=ChatMessageHistory()
-	  return store[session_id]
-	  
-	with_message_history=RunnableWithMessageHistory(model,get_session_history)
-	
-	
-	config1={"configurable":{"session_id":"chat2"}}
-
-	resonse=with_message_history.invoke(
-	  [
-		HumanMessage(content="Whats my name?"),
-	  ],
-	  config=config1
-	)
-	resonse.content

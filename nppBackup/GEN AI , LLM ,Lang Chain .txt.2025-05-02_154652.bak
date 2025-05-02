@@ -1,0 +1,102 @@
+GenAI:
+	-Models used in Deep Learning
+		1.Descriminative Models:
+			-Tasks like classification,prediction,regression
+			-Trained on labeled dataset
+			
+			
+		2.Genrative AI:
+			-Tasks line generating new data 
+			-generate new data trainied on Huge dataset
+			
+			-Models use in GEN AI:
+				1.LLM: Large language model
+				2.LIM:Large Image model
+		
+	-LLM Models:
+	
+	
+		
+RAG (Retrieval Augmented Generation):
+	-If we have Data Source eg PDF:
+		-If we wanna make PDA as Documented QnA Application
+	
+	Modules to create the Applications like this:
+		1.Module 1
+			1.Data injection:
+				-To get data from various sources like
+				1.PDF,2.URLs,3.JSON,4.Imgs,5.Videos
+			
+			2.Split/Devide Data into smaller chunks
+				-Split into:
+					1.Text
+					2.Documented
+				-Some LLMs model has limitation on context size that why it is imp
+				
+				-Techniques to split data:
+					1.
+			
+			3.Embde(Convert text to vectors)
+			
+			4.Store the Converted Vectors from text into store:
+				-VectorStore DB
+					1.FAISS DB
+					2.CHROMADB
+					3.ASTRADB
+			
+			
+		2.Module 2 (Retrive)
+			-Retrieval chain
+				-A interface to query VectorStoreDB
+			
+		
+		
+LangChain ecosystem:
+	-A framework to use to build GEN AI Application with any LLM model
+	-All model in langChain are open source
+	-LangSmith:
+		-It has LangSmith help to do MLOPs things eg Debugging,Playground,evaluation,Annotaion,Monitoring
+	-LangServe:
+		Create chain as RestAPI and helps to tasks like Deployment
+				
+
+LangChain:
+	-Imp Component of LangChain:
+		-Data Injection
+			1.Document loader:
+				-Different ways to load data from various sources
+			
+		-Splitter:
+			-we can split by:
+				-Recursively by characters
+				-by Htmlheader
+				-Json
+				-Charecher Text
+				
+					-Sample single systax here we can use more
+						-Syntax:
+							text_splitter=RecursiveCharacterTextSplitter(chunk_size=100,chunk_overlap=20)
+							final_documents=text_splitter.create_document(var_name)
+							final_documents=text_splitter.split_documents(docs)
+					
+		-Embedding:
+			-Converting text into vectors
+			Ways To do Embed texts to vectors:
+				1.OpenAi:
+					syntax:
+						from langchain_openai import OpenAIEmbeddings
+						embeddings=OpenAIEmbeddings(api_key=OPEN_API_KEY,model="text-embedding-3-large")
+						print(embeddings)
+						
+						text="This is tutorial in OPENAI embeddings"
+						embeddings.embed_query(text)
+						we need langchain-openai for openai api key
+						
+				2.OLLAMA
+				3.Hugging Face
+		
+		
+		-Retriver:
+			A interface ,Helps to retrive from vector Store and give output
+				
+			
