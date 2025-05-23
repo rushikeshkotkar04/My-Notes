@@ -1,0 +1,202 @@
+GenAI:
+	-Models used in Deep Learning
+		1.Descriminative Models:
+			-Tasks like classification,prediction,regression
+			-Trained on labeled dataset
+			
+			
+		2.Genrative AI:
+			-Tasks line generating new data 
+			-generate new data trainied on Huge dataset
+			
+			-Models use in GEN AI:
+				1.LLM: Large language model
+				2.LIM:Large Image model
+		
+	-LLM Models:
+	
+	
+		
+RAG (Retrieval Augmented Generation):
+	-If we have Data Source eg PDF:
+		-If we wanna make PDA as Documented QnA Application
+	
+	Modules to create the Applications like this:
+		1.Module 1
+			1.Data injection:
+				-To get data from various sources like
+				1.PDF,2.URLs,3.JSON,4.Imgs,5.Videos
+			
+			2.Split/Devide Data into smaller chunks
+				-Split into:
+					1.Text
+					2.Documented
+				-Some LLMs model has limitation on context size that why it is imp
+				
+				-Techniques to split data:
+					1.
+			
+			3.Embde(Convert text to vectors)
+			
+			4.Store the Converted Vectors from text into store:
+				-VectorStore DB
+					1.FAISS DB
+					2.CHROMADB
+					3.ASTRADB
+			
+			
+		2.Module 2 (Retrive)
+			-Retrieval chain
+				-A interface to query VectorStoreDB
+			
+		
+		
+LangChain ecosystem:
+	-A framework to use to build GEN AI Application with any LLM model
+	-All model in langChain are open source
+	-LangSmith:
+		-It has LangSmith help to do MLOPs things eg Debugging,Playground,evaluation,Annotaion,Monitoring
+	-LangServe:
+		Create chain as RestAPI and helps to tasks like Deployment
+				
+
+LangChain:
+	-Imp Component of LangChain:
+		-Data Injection
+			1.Document loader:
+				-Different ways to load data from various sources
+			
+		-Splitter:
+			-we can split by:
+				-Recursively by characters
+				-by Htmlheader
+				-Json
+				-Charecher Text
+				
+					-Sample single systax here we can use more
+						-Syntax:
+							text_splitter=RecursiveCharacterTextSplitter(chunk_size=100,chunk_overlap=20)
+							final_documents=text_splitter.create_document(var_name)
+							final_documents=text_splitter.split_documents(docs)
+					
+		-Embedding:
+			-Converting text into vectors
+			Ways To do Embed texts to vectors:
+				1.OpenAi:
+					syntax:
+						-we need langchain-openai for openai api key
+						from langchain_openai import OpenAIEmbeddings
+						embeddings=OpenAIEmbeddings(api_key=OPEN_API_KEY,model="text-embedding-3-large")
+						print(embeddings)
+						
+						text="This is tutorial in OPENAI embeddings"
+						embeddings.embed_query(text)
+						
+						
+				2.OLLAMA
+				3.Hugging Face
+		
+		
+		-Retrieval chain/documnet chain:
+			-A interface ,Helps to retrive from vector Store and give output
+			-we can use the retreiver to dynamically select the most relevant documents and pass 
+				those in for a given question
+			-Synatx
+				-from langchain.chains.combine_documents import create_stuff_documents_chain
+				-create_stuff_documents_chain is to give a paragaph or stuff in the document where we can get data
+			
+			-Flow:
+				Input->Retriever->VectorStoreDB
+			
+			create_stuff_documents_chain: 
+				This helper reads the pages you give it and uses the LLM (like ChatOpenAI) to write an answer based on those pages.
+		
+			create_retrieval_chain:
+				This helper combines the library (your vector database, like Chroma or Pinecone) with the page-reader helper to first find the right pages and then answer the question.
+LLM:
+	-Large language model
+	-We have top import model
+	llm=ChatOpenAI(model=model_name)
+	input=input()
+	llm.invoke(input)
+
+Prompt template:
+	-How you want LLM model to behave
+	-In short setting up the rule how it behaves to give output
+	from langchain_core.prompts import ChatPromptTemplate
+	
+	-Syntax:
+	
+		prompt=ChatPromptTemplate.from_messages(
+		  [
+			("system","Your are an expert AI engineer.Provide me answers based omn the question"),
+			("user",f"{input}")
+			
+		  ]
+		)
+		
+		-How to make sure our LLM works
+		
+		
+		-For own chat prompt template
+			-from langchain_core.prompts import ChatPromptTemplate
+	
+	
+	
+	-How to use prompt template with llm model:
+		-now it chains to the llm
+		-Syntax:
+			chain=prompt|llm
+			response=chain.invoke({"input":"Can you tell me LangSmith"})
+			print(response)
+			
+		-in this syntax the value of input goes in the input filed of the prompt template
+		-now it first goes to prompt an dthen goes to llm like that
+
+
+-Output parser:
+	-To display msg
+	
+	1.StrOutputParser:
+	
+		from langchain_core.output_parsers import StrOutputParser
+		output_parser=StrOutputParser()
+		chain=prompt|llm|output_parser
+		response=chain.invoke({"input":"Can you tell me LangSmith"})
+		print(response)
+	-we made a chain of where it is like our input goes fron the first then its output go to second and then thord and go on
+
+
+-Message History : 
+	-To make model stateful
+	-To store privous convo
+		
+		
+	## Message History : To make model stateful
+	from langchain_community.chat_message_histories import ChatMessageHistory
+	from langchain_core.chat_history import BaseChatMessageHistory
+	from langchain_core.runnables.history import RunnableWithMessageHistory
+
+	store={}
+	def get_session_history(session_id:str)->BaseChatMessageHistory:
+	  if session_id not in store:
+		store[session_id]=ChatMessageHistory()
+	  return store[session_id]
+	  
+	with_message_history=RunnableWithMessageHistory(model,get_session_history)
+	
+	
+	config1={"configurable":{"session_id":"chat2"}}
+
+	resonse=with_message_history.invoke(
+	  [
+		HumanMessage(content="Whats my name?"),
+	  ],
+	  config=config1
+	)
+	resonse.content
+
+
+tream_messages:
+	To let know how many last messages to take forward else delete all from history
+	we need RunnablePassThrough class to achieve this

@@ -1,0 +1,10 @@
+Point during LLD interview:
+	1.Design pattern
+	2.Solid Principles
+	3.Scalability : Horizontal using ditrubuted things like kafka,Async,Cache and all
+	4.ConcurrencyThread safe : Using concurrent colection or synchronized locking or redis
+	5.Error handling
+	6.Input validations
+	7.API design
+	8.DB
+	9.Security

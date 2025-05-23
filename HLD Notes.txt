@@ -1,0 +1,76 @@
+Scaling Techniques
+	Horizontal Scaling – Add more service instances (stateless), load balancer distributes traffic
+
+	Vertical Scaling – Increase resources (CPU/RAM) of a single server (limited use)
+
+	Load Balancing – Evenly distribute requests across service replicas
+
+	CDN (Content Delivery Network) – Cache static content closer to users for low latency
+
+	Caching
+
+	Client-side
+
+	Server-side (Redis, Memcached)
+
+	Database query caching
+
+	Database Optimization
+
+	Indexing – Fast lookup
+
+	Read Replicas – Scale reads
+
+	Sharding – Split data across DBs
+
+	Asynchronous Processing – Use message queues (Kafka, RabbitMQ) to handle heavy tasks in background
+
+	Concurrency Control – Redis locks, database locks, idempotency
+
+	Auto-Scaling – Automatically scale in/out based on load
+
+	Geo-Scaling / Multi-region – Deploy in multiple regions for global access & disaster recovery
+
+	Rate Limiting & Throttling – Prevent abuse and protect system under high load
+
+	Observability – Monitoring, logging, tracing for identifying bottlenecks
+
+	Circuit Breakers / Retry Patterns – Increase fault tolerance in high-load conditions
+
+	Service Mesh – Advanced traffic control and observability in microservices
+
+
+
+Availability Techniques
+	Redundancy – Multiple instances of services (active-active or active-passive)
+
+	Load Balancer with Health Checks – Routes traffic only to healthy instances
+
+	Failover Systems – Automatic switch to standby system if primary fails
+
+	Multi-Zone & Multi-Region Deployment – Avoid single point of failure (data centers, cloud regions)
+
+	Replication
+
+	DB Replication – Data copied to multiple nodes
+
+	Storage Replication – Prevents data loss
+
+	Auto-Healing – Automatically restart failed instances (e.g., Kubernetes, Azure App Services)
+
+	Disaster Recovery (DR) – Backup systems and recovery plans for outages
+
+	Graceful Degradation – Offer partial functionality during failure (e.g., read-only mode)
+
+	Rate Limiting & Backpressure – Prevent overload and crash during traffic spikes
+
+	Retry & Circuit Breaker Patterns – Handle temporary failures without system collapse
+
+	Load Shedding – Drop excess load to maintain core system availability
+
+	Monitoring & Alerting – Detect failures early (e.g., Azure Monitor, Prometheus)
+
+	Chaos Engineering – Intentionally test system resilience (Netflix Chaos Monkey)
+
+	Service Mesh – Manage service-to-service reliability (Istio, Linkerd)
+

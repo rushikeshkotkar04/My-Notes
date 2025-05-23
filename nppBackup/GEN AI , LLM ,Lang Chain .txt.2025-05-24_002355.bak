@@ -466,15 +466,7 @@ FineTuning:
 		
 		
 		
-	PEFT: PARAMETER EFFICIENT TRANFER LEARNING for NLP : LoRA comes under it
-		it feezing most of the wts of LLM and some of wts retrained and those helps to accurate results
-	
-	bitsandbytes: quantization
-	
-	tranformer 
-	
-	trl
-	
+	peft PARAMETER EFFICIENT TRANFER LEARNING for NLP
 	Full parameter finetuning:
 		-Update all model weights
 		-Hardware Resourses contraint

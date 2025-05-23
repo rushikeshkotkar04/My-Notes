@@ -433,13 +433,8 @@ FineTuning:
 			-the tracked wt is saved in two smaller mateix used matric decomposition based on the parameter Rank
 			 Rank is calculated using transport of matrix and make big tracked wt matrix in two small matrix so instead of big we need small memory
 			
-			-usually we select rank liek 1,2,8 mostly and it works finr actually rank=8 came with microsoft worked brilliantly
-			
-			-when to use high Rank: If model wanna learn complex things then u can use high rank or model is not trained not trained to probably interact or perform some behaviour we use high ranks for these complex things we can use it 
-			
 			-if Ranks keep increase still the no parametres still less than all parameters (prooved manually by increasing by researchers)
 			
-			-makes downstream task smoother
 			
 			-we multiply thode two small matrix(i.e decomposed matrix) we get tracked wt full matrix and then we add in old to get finetuned
 			
@@ -450,54 +445,20 @@ FineTuning:
 				
 			
 			
-			
-				
-				
+			Techniques of fine tune
 			
 		
 		
-	3.QLORA:Quantized LORA or LORA 2.O
-		-in QLora all the things in decomposed matrix convert values into lesser values
-		-Ex : convrts fp-32 /32 bits into fp-16/ 16 bits or lesser like
-		so we wont require much more memory so ot is again better than LORA
-		
-		-and best thing is that it has mazing algorithms like as we quantized so small value again back to its big value
-		like from fp-16 / 16 bits or less to fp-32 or 32 bits (just last examples used so to understand) 
-		
-		
-		
-	PEFT: PARAMETER EFFICIENT TRANFER LEARNING for NLP : LoRA comes under it
-		it feezing most of the wts of LLM and some of wts retrained and those helps to accurate results
+	3.QLORA:LORA 2.O
 	
-	bitsandbytes: quantization
-	
-	tranformer 
-	
-	trl
 	
 	Full parameter finetuning:
 		-Update all model weights
 		-Hardware Resourses contraint
 	
+	
+			
 
-	
-	Techniques of fine tune:
-				1.Prefix Embed
-				2.Prefix Layer
-				3.Adapter
-				4.LoRA
-				5.QLoRA
-	
-	
-	
-	for the fine tune the model:
-		Step1: Initialize model and its tokenizer
-		Step2: Model to its fineTune technique like lora,qlora or any
-		Step3: training arguments / Hyper parameter initialization like optimization and all
-		Step4: Use Trainer and apply training arguments and fit the model
-		Step5: Check the model accuracy
-		Step6: Save the model
-		
 	
 			
 	
