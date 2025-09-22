@@ -1,0 +1,125 @@
+
+to create index:
+	PUT student
+	
+to delete:
+	DELETE student
+
+
+PUT student
+
+
+to insert data:
+
+	POST student/_doc
+	{
+		"name":"Rushikesh",
+		"age":25
+	}
+
+to insert data with custom ID:
+
+	POST student/_doc/hjdg68823
+	{
+		
+		"name":"Akash",
+		"age":22
+	}
+
+
+to fetch data with Id:
+
+	GET student/_doc/hjdg68823
+
+
+to delete specific data from index
+
+	DELETE student/_doc/hjdg68823
+	
+for Update
+	POST student/_update/hjdg68823
+{
+    "doc": {
+        "age":56,
+        "lastName":"Kadam"
+    }
+}
+
+
+
+
+PUT customer
+
+POST customer/_doc
+{
+    "name":"Ram",
+    "age":22
+}
+
+POST customer/_doc
+{
+    "name":"Akshit",
+    "age":5
+}
+
+POST customer/_update/0th6YZkBqHtVxV8Y2I7v
+{
+    "doc": {
+        "age":25
+    }
+    
+}
+
+GET customer/_search
+{
+    "query": {
+        "match_all": {}
+    }
+}
+
+
+POST customer/_doc/0th6YZkBqHtVxV8Y2I7v
+{
+    "age":25
+}
+
+
+
+
+
+
+POST customer/_update_by_query
+{
+    "query": {
+        "match_all": {}
+    }
+}
+
+
+
+## Bulk API
+## index create update delete
+
+
+Bulk API help to do perform commands in bulk
+faster and better to perform such operation
+
+POST /customer/_bulk
+{ "index": {} }
+{   "name": "sham", "age":39}
+{"create":{}}
+{ "name":"ajay","age":43}
+{ "update" :{"_id":"0th6YZkBqHtVxV8Y2I7v"}}
+{ "doc":{"age":100}}
+{"delete":{"_id":"0dh6YZkBqHtVxV8Ydo5H"}}
+
+
+
+Analysis API:
+	-process to convert text into terms that can be efficiently stored and searched
+	
+	-It uses powerful text analysis engine to break down textual data into indivisual tokens or terms
+	terms conveted into inverted index helps to store index
+
+Mapping : to map the data type of the fields
+

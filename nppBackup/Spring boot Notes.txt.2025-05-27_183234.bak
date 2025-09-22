@@ -442,7 +442,7 @@ Terminologies:
 				-Helps to interact with database
 				-Provides functions to do so
 				-High level abstraction
-				-Can write custome queries using @Query()
+				-Can write customer queries using @Query()
 		
 		Advance JPA:
 				-To get related data tables

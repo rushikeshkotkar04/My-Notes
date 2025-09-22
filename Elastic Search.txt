@@ -1,0 +1,358 @@
+
+to create index:
+	PUT student
+	
+to delete:
+	DELETE student
+
+
+PUT student
+
+
+to insert data:
+
+	POST student/_doc
+	{
+		"name":"Rushikesh",
+		"age":25
+	}
+
+to insert data with custom ID:
+
+	POST student/_doc/hjdg68823
+	{
+		
+		"name":"Akash",
+		"age":22
+	}
+
+
+to fetch data with Id:
+
+	GET student/_doc/hjdg68823
+
+
+to delete specific data from index
+
+	DELETE student/_doc/hjdg68823
+	
+for Update
+	POST student/_update/hjdg68823
+{
+    "doc": {
+        "age":56,
+        "lastName":"Kadam"
+    }
+}
+
+
+
+
+PUT customer
+
+POST customer/_doc
+{
+    "name":"Ram",
+    "age":22
+}
+
+POST customer/_doc
+{
+    "name":"Akshit",
+    "age":5
+}
+
+POST customer/_update/0th6YZkBqHtVxV8Y2I7v
+{
+    "doc": {
+        "age":25
+    }
+    
+}
+
+GET customer/_search
+{
+    "query": {
+        "match_all": {}
+    }
+}
+
+
+POST customer/_doc/0th6YZkBqHtVxV8Y2I7v
+{
+    "age":25
+}
+
+
+
+
+
+
+POST customer/_update_by_query
+{
+    "query": {
+        "match_all": {}
+    }
+}
+
+
+
+## Bulk API
+## index create update delete
+
+
+Bulk API help to do perform commands in bulk
+faster and better to perform such operation
+
+POST /customer/_bulk
+{ "index": {} }
+{   "name": "sham", "age":39}
+{"create":{}}
+{ "name":"ajay","age":43}
+{ "update" :{"_id":"0th6YZkBqHtVxV8Y2I7v"}}
+{ "doc":{"age":100}}
+{"delete":{"_id":"0dh6YZkBqHtVxV8Ydo5H"}}
+
+
+
+Analysis API:
+	-process to convert text into terms that can be efficiently stored and searched
+	
+	-It uses powerful text analysis engine to break down textual data into indivisual tokens or terms
+	terms conveted into inverted index helps to store index
+
+Mapping : to map the data type of the fields
+
+Queris: using language Query DSL
+
+match query : full text search
+
+disjunction max query : combine multiple query
+
+
+
+Multimatch query:
+	searches multiple fields by givening priority to specific field
+
+
+
+
+
+PUT student
+DELETE student
+
+PUT student
+
+
+POST student/_doc
+{
+    "name":"Rushikesh",
+    "age":25
+}
+
+POST student/_doc/hjdg68823
+{
+    
+    "name":"Akash",
+    "age":22
+}
+
+
+GET student/_doc/hjdg68823
+GET student
+
+
+POST student/_update/hjdg68823
+{
+    "doc": {
+        "age":56,
+        "lastName":"Kadam"
+    }
+}
+
+POST student/_update/hjdg68823
+{
+    "script": {
+        "source": "ctx._source.age=37"
+    }
+}
+
+
+
+POST student/_update/hjdg68823
+{
+    "doc": {
+        "age":56,
+        "lastName":"Kadam"
+    }
+}
+
+
+PUT student/_doc/hjdg68823
+{
+    "name":"Ram"
+}
+
+
+PUT customer
+
+POST customer/_doc
+{
+    "name":"Ram",
+    "age":22
+}
+
+POST customer/_doc
+{
+    "name":"Akshit",
+    "age":5
+}
+
+POST customer/_update/0th6YZkBqHtVxV8Y2I7v
+{
+    "doc": {
+        "age":25
+    }
+    
+}
+
+GET customer/_search
+{
+    "query": {
+        "match_all": {}
+    }
+}
+
+
+POST customer/_doc/0th6YZkBqHtVxV8Y2I7v
+{
+    "age":25
+}
+
+
+
+POST customer/_update_by_query
+{
+    "query": {
+        "match_all": {}
+    }
+}
+
+
+## Bulk API
+## index create update delete
+POST /customer/_bulk
+{ "index": {} }
+{   "name": "sham", "age":39}
+{"create":{}}
+{ "name":"ajay","age":43}
+{ "update" :{"_id":"0th6YZkBqHtVxV8Y2I7v"}}
+{ "doc":{"age":100}}
+{"delete":{"_id":"0dh6YZkBqHtVxV8Ydo5H"}}
+
+
+PUT movies
+{
+    "mapping":{
+        "properties":{
+            "name":{
+                "type":"text"
+            },
+            "rating":{
+                "type":"float"
+            }
+        }
+    }
+}
+
+POST /students/_bulk
+{ "index": { "_id": 1 } }
+{ 
+  "name": "Tapu", 
+  "bio": "Leader of Tapu Sena. Bold, mischievous, and always full of ideas.",
+  "hobbies": ["pranks", "leadership", "cycling"],
+  "dob": "2010-05-14",
+  "bag": [
+    { "toy_name": "Remote Car", "quantity": 1 },
+    { "toy_name": "Water Gun", "quantity": 2 }
+  ]
+}
+{ "index": { "_id": 2 } }
+{ 
+  "name": "Sonu", 
+  "bio": "Smart, responsible, and the only girl in the original Tapu Sena.",
+  "hobbies": ["reading", "dancing", "quizzing"],
+  "dob": "2010-08-21",
+  "bag": [
+    { "toy_name": "Coloring Set", "quantity": 1 },
+    { "toy_name": "Puzzle Box", "quantity": 2 }
+  ]
+}
+{ "index": { "_id": 3 } }
+{ 
+  "name": "Gogi", 
+  "bio": "Energetic and fun-loving, Gogi brings life to Tapu Sena.",
+  "hobbies": ["dancing", "acting", "cricket"],
+  "dob": "2010-12-05",
+  "bag": [
+    { "toy_name": "Cricket Bat", "quantity": 1 },
+    { "toy_name": "Skateboard", "quantity": 1 }
+  ]
+}
+{ "index": { "_id": 4 } }
+{ 
+  "name": "Goli", 
+  "bio": "Food lover and joker of the group. Goli adds humor to every moment.",
+  "hobbies": ["eating", "jokes", "TV shows"],
+  "dob": "2010-07-30",
+  "bag": [
+    { "toy_name": "Snack Box", "quantity": 3 },
+    { "toy_name": "Comic Book", "quantity": 2 }
+  ]
+}
+{ "index": { "_id": 5 } }
+{ 
+  "name": "Pinku", 
+  "bio": "Calm and composed. Though less seen, Pinku is always reliable.",
+  "hobbies": ["chess", "meditation", "books"],
+  "dob": "2010-09-18",
+  "bag": [
+    { "toy_name": "Chess Board", "quantity": 1 },
+    { "toy_name": "Notepad", "quantity": 2 }
+  ]
+}
+
+
+GET students/_search
+{
+    "query":{
+        "match_all": {}
+    }
+}
+
+GET students/_search
+{
+    "query":{
+        "match": {
+            "bio" :{
+                "query":"leader food",
+                "operator": "or"
+            }
+        }
+    }
+}
+
+
+GET students/_search
+{
+    "query": {
+        "match": {
+          "hobbies": "leadership"
+        }
+    }
+}
+
+
+
+
+

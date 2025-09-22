@@ -567,30 +567,8 @@ PyTorch:
 		for single value it is easy but for the matrix 
 		if we wanna have its back propogation we have to sum all values in matrix using 
 		.sum() method and the take its backward()
-		
-		backward() method do a same wwith all values in the matrix which was before sum()
-		like daribation what we mentioned
-		
 	
-	## Implement ANN using PyTorch
-		
-		1.Create tensors
-		2.create class for NN
-		
-		
-		class ANN_Model(nn.Module):
-		  def __init__(self,input_features=8,hidden1=20,hidden2=20,out_features=2):
-			super().__init__()
-			self.f_connected1=nn.Linear(input_features,hidden1)
-			self.f_connected2=nn.Linear(hidden1,hidden2)
-			self.out=nn.Linear(hidden2,out_features)
-			pass
-		  def forward(self,x):
-			x=F.relu(self.f_connected1(x))
-			x=F.relu(self.f_connected2(x))
-			x=self.out(x)
-			return x
-			
+	
 	
 	Hyper parameters:
 		requires_grad=True --> to track changes on specific tensor for future use

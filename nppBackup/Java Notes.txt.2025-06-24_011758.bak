@@ -344,7 +344,6 @@ Streams:
 			.noneMatch(Predicate<T>)
 			.findFirst() --> to get first
 			.findAny()  --> Get Any element
-			.peek()     --> for logging or debugging stream
 			
 		list.parallelStream(),intermediate operartion.terminal operartion
 			prallelStream do operartion parallely so it reduces time 

@@ -1,0 +1,23 @@
+a=[[0,1],[1,2],[3,4],[5,6],[4,5],[2,6]]
+
+rank=[0 for i in range(7)]
+par=[i for i in range(7)]
+
+def finPar(u,par):
+    if u==par[u]:
+        return par[u]
+    par[u]=finPar(par[u],par)
+    return par[u]
+
+for u,v in a:
+    pu=finPar(u,par)
+    pv=finPar(v,par)
+    ru=rank[pu]
+    rv=rank[pv]
+    if ru==rv:
+        rank[pu]+=1
+        par[pv]=pu
+    elif rv<ru:
+        par[pv]=pu
+    elif ru<rv:
+        par[pu]=pv
