@@ -1,33 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="84df96d0-911d-43c8-8faf-1a8309e6af4a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/C# interview questions.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/C#.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Elastic Search.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kubernetes.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MongoDB.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System design knowledge for interview.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nppBackup/C#.txt.2025-06-18_135059.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nppBackup/Elastic Search.txt.2025-09-22_084021.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nppBackup/GEN AI , LLM ,Lang Chain .txt.2025-05-25_151935.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nppBackup/GEN AI , LLM ,Lang Chain .txt.2025-05-25_155343.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nppBackup/GEN AI , LLM ,Lang Chain .txt.2025-05-25_160301.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nppBackup/GEN AI , LLM ,Lang Chain .txt.2025-05-25_160900.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nppBackup/GEN AI , LLM ,Lang Chain .txt.2025-05-25_161553.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nppBackup/GEN AI , LLM ,Lang Chain .txt.2025-05-25_162114.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nppBackup/GEN AI , LLM ,Lang Chain .txt.2025-05-25_162857.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nppBackup/GEN AI , LLM ,Lang Chain .txt.2025-05-25_163007.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nppBackup/GEN AI , LLM ,Lang Chain .txt.2025-05-25_163049.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nppBackup/GEN AI , LLM ,Lang Chain .txt.2025-05-25_172410.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nppBackup/Java Notes.txt.2025-06-24_011758.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nppBackup/Spring boot Notes.txt.2025-05-27_183234.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nppBackup/System design knowledge for interview.txt.2025-06-03_002031.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nppBackup/System design knowledge for interview.txt.2025-06-03_002138.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/union Find.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GEN AI , LLM ,Lang Chain .txt" beforeDir="false" afterPath="$PROJECT_DIR$/GEN AI , LLM ,Lang Chain .txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java Notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Java Notes.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring boot Notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Spring boot Notes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

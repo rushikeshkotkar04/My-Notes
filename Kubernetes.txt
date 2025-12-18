@@ -1,1 +1,16 @@
 Kubernetes
+	-helps to manage containerized applications
+	-contained orchestration tool
+	
+	use cases:
+		-To make monolithic to micro services
+		-High availability / No down time
+		-Scalability / high performance
+		-Disaster recovery (Backup and restor)
+	
+Components of kubernetes
+	Pod:
+		abstraction over container/ images
+		
+		
+		

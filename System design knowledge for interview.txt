@@ -1,5 +1,16 @@
-WebRTC:
+WebRTC:WebReal time communication
+	-Video AUdio type task mostly
 	-It uses STUN and TURN algos to find the public IP of other and Fallback server if P2P fails
 	-It uses chunking of the video internally so no need of chunker 
 	-It uses combine dof DTLS (Datagram Transport Layer Security)-SRTP (Secure Real-Time Transport Protocol)
+	-Sometimes need manual chunk the data
 	
+WebSocket:
+	-For chatting app ,live leaderboard type things,File sharing
+	-need to use wss (TSL over HTTP type) for security
+	-Hnaldes chunking automaticakllu for big msges
+	
+	
+	
+HTTP/HTTPs-> For sending data like text or images or video 
+			best for uploading things

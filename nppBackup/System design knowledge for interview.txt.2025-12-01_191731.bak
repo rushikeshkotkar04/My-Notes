@@ -1,0 +1,5 @@
+WebRTC:
+	-It uses STUN and TURN algos to find the public IP of other and Fallback server if P2P fails
+	-It uses chunking of the video internally so no need of chunker 
+	-It uses combine dof DTLS (Datagram Transport Layer Security)-SRTP (Secure Real-Time Transport Protocol)
+	

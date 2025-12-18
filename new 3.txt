@@ -1,0 +1,40 @@
+Kubernetes
+
+Architecture -> master node,worker node (main work)
+
+Container -> Running image
+
+Pod-> Can have multiple container / manage multiple container
+
+Service -> To explose pod outside world 
+
+Deployment-> To manage the service we give replica counts and all
+
+PVC (persistence volume claim) -> To store the data when any pod fails, Abstraction over the storage, PVC can be backed by NFS, Cloud storage AWS EBS
+
+Stateful set -> manages state of the applications of state
+
+Config Map -> Env var and all things
+
+Secrets
+
+Storage classes 
+
+ingress
+
+kubectl get pods -n <namespaceName>
+
+kubectl describe pods
+
+kubectl edit config map
+
+kubectl delete pods -n name
+
+
+
+
+Logs & Debugging
+
+kubectl logs <pod-name> to debug
+
+kubectl exec -it <pod-name> -- /bin/bash to get inside a container
