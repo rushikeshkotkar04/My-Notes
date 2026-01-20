@@ -53,25 +53,37 @@ Multiple transformations are happening - 0 to 1
 
 */
 
-
-def DFS(grid,i,j,num,cnt:[],realI,realJ):
-    ##
-    ##
-    parnet[(i,j)]=reaI,realJ
-    return 
-    
-
-for i in range(n):
-    for j in range(m):
-        DFS(grid,i,j,num,cnt:[])
-        rank[(i,j)]=cnt[0]
-        
-
 parent={}
 rank={}
 cnt=0
 ans=[]
 land=set()
+
+def DFS(grid,i,j,num,realI,realJ,parent):
+    ##
+    ##
+	if i>=len(grid) or j>=len(grid[0]) or i<0 or j<0:
+		return
+	if i>=0 and i<len(grid) and j>=0 and j<len(grid[0]) and grid[i][j]!=1:
+		return
+	
+    parnet[(i,j)]=reaI,realJ
+	DFS(grid,i+1,j,num,realI,realJ,parent)
+	DFS(grid,i,j+1,num,realI,realJ,parent)
+	DFS(grid,i-1,j,num,realI,realJ,parent)
+	DFS(grid,i,j-1,num,realI,realJ,parent)
+    return 
+    
+
+for i in range(n):
+    for j in range(m):
+        DFS(grid,i,j,num,i,j,parent)
+		num+=1
+		cnt+=1
+        rank[(i,j)]=cnt[0]
+        
+
+
 def find(x):
     if parent[x]!=x:
         parent[x]=find(parent[x])
@@ -79,6 +91,7 @@ def find(x):
 
 
 def union(x,y):
+	nonlocal cnt
     px,py=find(x),find(y)
     
     if px==py:
@@ -112,3 +125,142 @@ for i,j in pos:
         if 0<=ni< n and 0<=nj< m and (ni,nj) in land:
             union((i,j),(ni,nj))
     ans.append([cnt])
+	
+	
+	
+	LLD
+	
+	
+Customer:
+ -name:String
+ -email:String
+ -mobileNu:long
+ -mutualFund:MutualFund
+
+
+MenuAgent:
+    -name:String
+     -email:String
+     -mobileNu:long
+     -profile:Profile
+    -Status:Status
+
+Fund:
+    -fundTitle:String
+    - manu.Name:String
+    -price:Double
+    -List<History>:
+
+<<abs>>MenuAgent:
+    -menuTitle:String
+    +Menu(title)
+    +excute(CustomerWrapper)
+
+
+ class FundDetails extends Menu:
+   +FundDetails(title)
+  
+class PortFolioInfo extends Menu:
+    
+PortFolioInfo(Cust)
+
+class InvStatus extends Menu
+    InvStatus(title,Fund,Cust):
+
+enum MenuEnum{
+0,1,2,3....
+}
+
+
+
+class MenuFactory{
+    Map<Menu,MenuAgent> ={0:new FundDetails()}
+
+getObject
+}
+
+class CustomerWrapper{
+custmer 
+currerMenu
+
+}
+
+class MenuSelectionAgent{
+    MenuFactory
+    selectMenu()
+    
+ }
+
+
+
+class AgentCallingBasedOnMenus{
+MenuFactory
+AgentMan
+ +callAgent(MenuEnum){
+}
+}
+
+
+
+-Customers
+-Menus
+
+
+0-details about fund 
+1-Portfolio
+2-queryAboutAccount
+3-inv status
+
+fnc:
+    callingToAgent
+provideing menus
+Routing 
+Agent handle
+
+non fun
+    scaling
+    concurr
+    latency
+
+API
+calling Customer
+
+
+selectMenu 0/1/2
+
+routingToparticalAgent
+
+
+
+
+HLD round -20.1.2026
+System design -
+Distributed No-SQL database
+- put(id, json_data)
+- query(id)
+- System should have low latency and high throughput
+
+requirments
+
+1.Fun:
+    1.put(id,json)
+    2.query(id)
+2.non -fun
+    low latency 
+    high through
+    available>> consitancy 
+    fault tolerance
+
+5M per sec read
+5M per sec write
+
+data:
+    id
+    json
+
+
+API
+    POST/put {Data} : 200K
+    GET/query{id} : Data
+
+
