@@ -566,7 +566,7 @@ Natural Language processing:
 			
 			Advantages of word2 vec:
 				-Instead of sparse matrix we get dense matrix
-				-Symantic information will get captured (simmilar word captured like synonyms or asynonims)
+				-Symantic information will get captured (simmilar word captured like synonyms or asynonyms)
 				-Fixed set of diamensions so we are not dependant on vocabulary size
 				-Out of vocabulary problem also solved as we are capturing all info like symantic information and all
 				

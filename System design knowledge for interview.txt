@@ -14,3 +14,176 @@ WebSocket:
 	
 HTTP/HTTPs-> For sending data like text or images or video 
 			best for uploading things
+			
+			
+			
+
+
+What to talk in HLD interview:
+	
+	1.Requiremnets:
+		1.Functional Requiremnets
+		2.Non Functional Requirments
+	2.Entities and DB type
+	3.API calls
+	4.High Level Diagram
+	5.Deep Dive
+	
+	tradeoffs 
+	Request protocol
+	Caching
+	Zookeeper
+	Kafka
+	DB shradding/replication
+	indexing
+	
+	
+	Every time for realtime chat application we can use websocket Connection
+	For videocall we can use WebRTC connection 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	------------------------------------------------------------------------------------------------------------------------------------------------
+	
+	
+	
+	Perfect! Let’s go systematically. At the SDE2 level, HLD (High-Level Design) is mostly about clarity, scalability, and trade-offs. I’ll break it into must-haves, good-to-have, and exceptional ways to stand out.
+
+1️⃣ Must-Have Things in HLD (to “pass”)
+
+These are non-negotiable, the interviewer expects them:
+
+a) Components & Architecture
+
+Identify major system components/modules.
+
+Example: Device, API Gateway, Server, Database, Monitoring Service.
+
+Show how components interact.
+
+Clearly mark responsibilities of each component.
+
+b) Data Flow
+
+Describe how data moves through the system.
+
+Include triggers, events, or periodic actions.
+
+Example: Device → Server (heartbeat) → Status Table → Monitoring Service
+
+c) High-Level Tech Choices
+
+Mention protocols and tech stacks conceptually.
+
+Example: HTTP REST, WebSocket, MQTT, Redis, PostgreSQL.
+
+No need for headers, method signatures, or DB schemas.
+
+d) Scalability Considerations
+
+How system handles growth in users/devices.
+
+Mention load balancers, horizontal scaling, caching, async processing if relevant.
+
+e) Reliability & Fault Tolerance
+
+High-level approach for failures:
+
+Retry mechanisms
+
+Timeout handling
+
+Redundancy / replication
+
+At least conceptually, not low-level code.
+
+f) Security & Access Control
+
+Authentication, authorization, encryption considerations.
+
+Example: API key, TLS for device-server communication.
+
+✅ If you include all of the above, you will “pass” basic HLD expectations.
+
+2️⃣ Good-to-Have / Optional (impress the interviewer)
+
+These show you think like a senior engineer:
+
+Metrics & Monitoring: How will you monitor device health, server load, alerts?
+
+Data Retention & Cleanup: What happens to old heartbeat data or logs?
+
+Trade-offs: Example: “We use HTTP polling instead of WebSockets to simplify firewall traversal, at the cost of slightly higher server load.”
+
+Timeouts & Heartbeat Intervals: High-level reasoning for values, not exact code.
+
+Message Formats: Mention JSON vs binary if relevant.
+
+3️⃣ Exceptional Things / How to Stand Out
+
+If you want to wow interviewers at SDE2 level:
+
+a) Show Scalability Thoughtfulness
+
+Discuss millions of devices and how server can handle load.
+
+Suggest caching, queues (Kafka/RabbitMQ), or sharding DBs for scale.
+
+b) Async / Event-Driven Architecture
+
+Instead of just polling, mention optional push or long-poll for efficiency.
+
+Show awareness of real-time vs batch trade-offs.
+
+c) Failure Handling & Reliability
+
+Mention exactly how system behaves if devices miss heartbeats, server goes down, or network partitions happen.
+
+Use patterns like circuit breaker, retry with exponential backoff, dead-letter queue.
+
+d) Extensibility
+
+Show that your design can support future features:
+
+Device groups
+
+Different types of messages
+
+Multiple protocols
+
+e) Diagrams
+
+Include clean, simple diagrams (component diagram + sequence diagram).
+
+Visuals often impress more than words.
+
+4️⃣ Summary Table
+Aspect	Must-Have	Optional / Good	Exceptional / Standout
+Components	Yes	—	Modular/extensible architecture
+Data flow	Yes	Monitoring metrics	Queue/event-driven approach
+Protocols / Tech	High-level only	Mention JSON vs Binary	Trade-offs / scalability
+Scalability	Basic mention	Caching, async tasks	Millions of devices / sharding
+Reliability / Faults	Basic mention	Retry / timeout policies	Circuit breaker, redundancy patterns
+Security	Basic mention	Encryption / API key	Threat modeling / defense-in-depth
+Diagrams	Optional (recommended)	Yes, sequence diagrams	Clean + intuitive + covers edge cases
+
+✅ Rule of Thumb for HLD:
+
+“Explain the system clearly, show scalability, fault-tolerance, and trade-offs. Avoid low-level code, DB schemas, or exact HTTP headers.”
+
+If you want, I can draft a sample SDE2-level HLD for your device online/offline system including diagram, heartbeat flow, and design choices that you could use in an interview.
+
+Do you want me to do that?
+
+
+
+
+
