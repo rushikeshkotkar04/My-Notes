@@ -1,8 +1,0 @@
-C#:
-	Doent support multiple inheritance
-	
-	ref/out: keywords to pass parameter as a referrnce and out is same as ref with rerurn in same variable
-	
-	extention method in C# is a static method in statcic class can help to extend a class methods by passing class object and its paarmeters
-	
-	we have sealed or readonly key words instead final(like java)d
